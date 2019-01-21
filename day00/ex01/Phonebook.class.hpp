@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/21 09:23:09 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/21 09:23:14 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/21 09:32:08 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -14,9 +14,8 @@
 # define PHONEBOOK_CLASS_HPP
 
 #include <iostream>
-#include <string>
 #include <iomanip>
-#include <vector>
+#include <string>
 
 class Phonebook
 {
