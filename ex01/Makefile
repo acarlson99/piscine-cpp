@@ -6,13 +6,13 @@
 #    By: acarlson <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/20 15:24:00 by acarlson          #+#    #+#              #
-#    Updated: 2019/01/20 18:16:25 by acarlson         ###   ########.fr        #
+#    Updated: 2019/01/20 21:46:11 by john             ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 CC = clang++
 CPPFLAGS = -Wall -Wextra -Werror
-FILES = phonebook Contact
+FILES = Phonebook main
 CPPFILES = $(addsuffix .cpp, $(FILES))
 OFILES = $(addsuffix .o, $(FILES))
 INCLUDES = -I ./
