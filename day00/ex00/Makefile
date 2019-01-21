@@ -6,12 +6,12 @@
 #    By: acarlson <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/20 13:42:06 by acarlson          #+#    #+#              #
-#    Updated: 2019/01/20 15:18:57 by acarlson         ###   ########.fr        #
+#    Updated: 2019/01/21 09:17:47 by acarlson         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 CC = clang++
-CPPFLAGS = -Wall -Wextra -Werror
+CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 FILES = megaphone
 CPPFILES = $(addsuffix .cpp, $(FILES))
 OFILES = $(addsuffix .o, $(FILES))

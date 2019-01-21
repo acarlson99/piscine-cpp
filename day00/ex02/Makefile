@@ -6,12 +6,12 @@
 #    By: acarlson <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/21 08:53:39 by acarlson          #+#    #+#              #
-#    Updated: 2019/01/21 08:58:29 by acarlson         ###   ########.fr        #
+#    Updated: 2019/01/21 09:20:33 by acarlson         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 CC = clang++
-CPPFLAGS = -Wall -Wextra -Werror
+CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 FILES = Account.class ressources/tests
 CPPFILES = $(addsuffix .cpp, $(FILES))
 INCLUDES = -I ressources/

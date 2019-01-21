@@ -1,14 +1,17 @@
 // ************************************************************************** //
 //                                                                            //
 //                                                        :::      ::::::::   //
-//   Phonebook.hpp                                      :+:      :+:    :+:   //
+//   Phonebook.class.hpp                                :+:      :+:    :+:   //
 //                                                    +:+ +:+         +:+     //
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
-//   Created: 2019/01/21 08:50:34 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/21 08:50:37 by acarlson         ###   ########.fr       //
+//   Created: 2019/01/21 09:23:09 by acarlson          #+#    #+#             //
+//   Updated: 2019/01/21 09:23:14 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
+
+#ifndef PHONEBOOK_CLASS_HPP
+# define PHONEBOOK_CLASS_HPP
 
 #include <iostream>
 #include <string>
@@ -44,3 +47,5 @@ public:
 	Phonebook();
 	void	handle_input(const std::string& input);
 };
+
+#endif
