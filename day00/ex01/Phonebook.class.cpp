@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/21 09:22:55 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/21 09:23:04 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/21 10:05:38 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -14,14 +14,14 @@
 
 Phonebook::Phonebook()
 {
-	i = 0;
+	_i = 0;
 }
 
-void		Phonebook::add()
+void		Phonebook::_add()
 {
 	std::string		line;
 
-	if (i >= 8)
+	if (_i >= 8)
 	{
 		std::cout << "TOO MANY BOYS" << std::endl;
 		return ;
@@ -29,51 +29,51 @@ void		Phonebook::add()
 	std::cout << "Enter firstname: ";
 	if (!getline(std::cin, line))
 		std::exit(0);
-	contacts[i].firstname = line;
+	_contacts[_i].firstname = line;
 	std::cout << "Enter lastname: ";
 	if (!getline(std::cin, line))
 		std::exit(0);
-	contacts[i].lastname = line;
+	_contacts[_i].lastname = line;
 	std::cout << "Enter nickname: ";
 	if (!getline(std::cin, line))
 		std::exit(0);
-	contacts[i].nickname = line;
+	_contacts[_i].nickname = line;
 	std::cout << "Enter login: ";
 	if (!getline(std::cin, line))
 		std::exit(0);
-	contacts[i].login = line;
+	_contacts[_i].login = line;
 	std::cout << "Enter postal_address: ";
 	if (!getline(std::cin, line))
 		std::exit(0);
-	contacts[i].postal_address = line;
+	_contacts[_i].postal_address = line;
 	std::cout << "Enter email_address: ";
 	if (!getline(std::cin, line))
 		std::exit(0);
-	contacts[i].email_address = line;
+	_contacts[_i].email_address = line;
 	std::cout << "Enter phone_number: ";
 	if (!getline(std::cin, line))
 		std::exit(0);
-	contacts[i].phone_number = line;
+	_contacts[_i].phone_number = line;
 	std::cout << "Enter birthday: ";
 	if (!getline(std::cin, line))
 		std::exit(0);
-	contacts[i].birthday = line;
+	_contacts[_i].birthday = line;
 	std::cout << "Enter fav_meal: ";
 	if (!getline(std::cin, line))
 		std::exit(0);
-	contacts[i].fav_meal = line;
+	_contacts[_i].fav_meal = line;
 	std::cout << "Enter und_color: ";
 	if (!getline(std::cin, line))
 		std::exit(0);
-	contacts[i].und_color = line;
+	_contacts[_i].und_color = line;
 	std::cout << "Enter secret: ";
 	if (!getline(std::cin, line))
 		std::exit(0);
-	contacts[i].secret = line;
-	++i;
+	_contacts[_i].secret = line;
+	++_i;
 }
 
-void		Phonebook::print_single(Contact c) const
+void		Phonebook::_print_single(Contact c) const
 {
 	std::cout << c.firstname << std::endl;
 	std::cout << c.lastname << std::endl;
@@ -92,14 +92,14 @@ void		Phonebook::print_single(Contact c) const
 |         0| Firstname|  Lastname|  Nickname|
 */
 
-void		print_nine(std::string s)
+static void	print_nine(std::string s)
 {
 	for (int i = 0; i < 9; i++)
 		std::cout << (char)s[i];
 	std::cout << ".";
 }
 
-void		print_stuff(int index, std::string first, std::string last, std::string nick)
+void		_print_stuff(int index, std::string first, std::string last, std::string nick)
 {
 	std::cout << "|";
 	std::cout << std::setw(10);
@@ -133,24 +133,24 @@ void		print_stuff(int index, std::string first, std::string last, std::string ni
 	std::cout << "|" << std::endl;
 }
 
-void		Phonebook::print_all() const
+void		Phonebook::_print_all() const
 {
-	print_stuff(-1, "FIRST", "LAST", "NICK");
-	for (int j = 0; j < i; j++)
-		print_stuff(j, contacts[j].firstname, contacts[j].lastname, contacts[j].nickname);
+	_print_stuff(-1, "FIRST", "LAST", "NICK");
+	for (int j = 0; j < _i; j++)
+		_print_stuff(j, _contacts[j].firstname, _contacts[j].lastname, _contacts[j].nickname);
 }
 
-void		Phonebook::search() const
+void		Phonebook::_search() const
 {
 	std::string		line;
 	int				n;
 
-	if (i == 0)
+	if (_i == 0)
 	{
 		std::cout << "There are no boys in your boy book" << std::endl;
 		return ;
 	}
-	print_all();
+	_print_all();
 	std::cout << "Enter index: ";
 	if (!(getline(std::cin, line)))
 		std::exit(0);
@@ -161,12 +161,12 @@ void		Phonebook::search() const
 			return ;
 		}
 	n = std::atoi(line.c_str());
-	if (n >= i || n < 0 || !line[0])
+	if (n >= _i || n < 0 || !line[0])
 	{
 		std::cout << "Invalid index" << std::endl;
 		return ;
 	}
-	print_single(contacts[n]);
+	_print_single(_contacts[n]);
 }
 
 void		Phonebook::handle_input(const std::string& line)
@@ -174,9 +174,7 @@ void		Phonebook::handle_input(const std::string& line)
 	if (line == "EXIT")
 		std::exit(0);
 	else if (line == "ADD")
-		add();
+		_add();
 	else if (line == "SEARCH")
-		search();
-	else if (line == "I")
-		std::cout << i << std::endl;
+		_search();
 }

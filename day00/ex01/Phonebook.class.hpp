@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/21 09:23:09 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/21 09:32:08 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/21 10:00:36 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -35,13 +35,13 @@ private:
 		std::string und_color;
 		std::string secret;
 	};
-	Contact	contacts[8];
-	int		i;
+	Contact	_contacts[8];
+	int		_i;
 
-	void	add();
-	void	search() const;
-	void	print_single(Contact c) const;
-	void	print_all() const;
+	void	_add();
+	void	_search() const;
+	void	_print_single(Contact c) const;
+	void	_print_all() const;
 public:
 	Phonebook();
 	void	handle_input(const std::string& input);
