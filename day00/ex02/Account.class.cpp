@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/21 09:02:13 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/21 16:32:44 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/21 16:39:53 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -75,12 +75,15 @@ void	Account::makeDeposit( int deposit )
 bool	Account::makeWithdrawal( int withdrawal )
 {
 //	std::cout << "makeWithdrawal" << std::endl;
+	_displayTimestamp();
 	if (this->_amount >= withdrawal)
 	{
+		std::cout << "account:" << _accountIndex << ";p_amount:" << _amount << ";deposits:" << _nbDeposits << ";withdrawals:" << _nbWithdrawals << std::endl;
 		this->_amount -= withdrawal;
 		++this->_nbWithdrawals;
 		return (true);
 	}
+	std::cout << "account:" << _accountIndex << ";p_amount:" << _amount << ";withdrawl:refused" << std::endl;
 	return (false);
 }
 
