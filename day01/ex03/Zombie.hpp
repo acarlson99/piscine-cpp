@@ -1,26 +1,38 @@
 // ************************************************************************** //
 //                                                                            //
 //                                                        :::      ::::::::   //
-//   main.cpp                                           :+:      :+:    :+:   //
+//   Zombie.hpp                                         :+:      :+:    :+:   //
 //                                                    +:+ +:+         +:+     //
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
-//   Created: 2019/01/22 08:43:40 by acarlson          #+#    #+#             //
-/*   Updated: 2019/01/22 13:55:56 by acarlson         ###   ########.fr       */
+//   Created: 2019/01/22 09:52:15 by acarlson          #+#    #+#             //
+//   Updated: 2019/01/22 13:42:25 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
-#include "Zombie.hpp"
-#include "ZombieEvent.hpp"
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-int main()
-{
-	Zombie jim = Zombie("Jim");
-	Zombie *z = ZombieEvent::randomChump();
+# include <iostream>
+# include <string>
+# include <vector>
+# include <random>
 
-	ZombieEvent::setZombieType("Melting");
-	Zombie *o = ZombieEvent::randomChump();
-	delete z;
-	delete o;
-	jim.announce();
-}
+class Zombie {
+
+public:
+	std::string		type;
+	std::string		name;
+
+	static std::string	names[10];
+	static std::string	types[5];
+
+	Zombie(  std::string n, std::string t );
+	Zombie( std::string n );
+	Zombie( void );
+	~Zombie( void );
+
+	void		announce( void ) const;
+};
+
+#endif
