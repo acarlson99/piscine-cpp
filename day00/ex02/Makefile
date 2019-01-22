@@ -6,7 +6,7 @@
 #    By: acarlson <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/21 08:53:39 by acarlson          #+#    #+#              #
-#    Updated: 2019/01/21 09:20:33 by acarlson         ###   ########.fr        #
+#    Updated: 2019/01/21 16:12:28 by acarlson         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -28,3 +28,13 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+k: fclean
+	rm -rf *.dSYM
+	rm -f *.out
+
+j:
+	$(CC) $(CPPFLAGS) -g $(INCLUDES) $(CPPFILES) -o $(NAME)
+
+diff: j
+	bash diff.sh
