@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/22 14:56:53 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/22 15:25:04 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/22 15:34:15 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -27,12 +27,12 @@ Human::~Human( void )
 {
 }
 
-std::string		Human::identify( void ) const
+std::string		Human::identify( void )
 {
 	return (this->getBrain().identify());
 }
 
-Brain			Human::getBrain( void ) const
+Brain&			Human::getBrain( void )
 {
 	return (this->_brain);
 }

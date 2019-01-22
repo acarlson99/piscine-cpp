@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/22 14:42:16 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/22 15:25:10 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/22 15:34:37 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -26,11 +26,11 @@ public:
 	Human( void );
 	Human( std::string name );
 	~Human( void );
-	std::string		identify( void ) const;
-	Brain			getBrain( void ) const;
+	std::string		identify( void );
+	Brain&			getBrain( void );
 
-	Brain	_brain;
 private:
+	Brain	_brain;
 
 };
 
