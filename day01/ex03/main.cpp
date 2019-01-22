@@ -6,15 +6,19 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/22 08:43:40 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/22 13:55:45 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/22 14:26:29 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
 #include "Zombie.hpp"
+#include "ZombieHorde.hpp"
 
 int main()
 {
-	Zombie jim = Zombie("Jim");
+	ZombieHorde *h = new ZombieHorde(4);
 
-	jim.announce();
+	h->announce();
+	delete h;
+	h = nullptr;
+	return (0);
 }
