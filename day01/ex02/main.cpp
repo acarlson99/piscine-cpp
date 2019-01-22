@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/22 08:43:40 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/22 13:40:49 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/22 13:50:25 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -19,7 +19,6 @@ int main()
 	Zombie jim = Zombie("Jim");
 	Zombie *z = ZombieEvent::randomChump();
 
-//	a();
 	ZombieEvent::setZombieType("Melting");
 	Zombie *o = ZombieEvent::randomChump();
 	delete z;

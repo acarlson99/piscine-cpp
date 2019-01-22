@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/22 09:52:06 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/22 13:46:06 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/22 13:49:55 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -55,7 +55,6 @@ Zombie::Zombie( void )
 
 Zombie::~Zombie( void )
 {
-	std::cout << this->name << " destroyed" << std::endl;
 }
 
 void		Zombie::announce( void ) const
