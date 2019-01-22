@@ -6,11 +6,11 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/22 07:52:31 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/22 07:59:23 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/22 08:14:21 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
-#include "Pony.hpp"
+#include "Pony.class.hpp"
 #include <iostream>
 
 int main()

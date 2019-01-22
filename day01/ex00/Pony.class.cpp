@@ -1,25 +1,36 @@
 // ************************************************************************** //
 //                                                                            //
 //                                                        :::      ::::::::   //
-//   Pony.hpp                                           :+:      :+:    :+:   //
+//   Pony.class.cpp                                     :+:      :+:    :+:   //
 //                                                    +:+ +:+         +:+     //
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
-//   Created: 2019/01/22 07:41:53 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/22 07:58:48 by acarlson         ###   ########.fr       //
+//   Created: 2019/01/22 08:13:49 by acarlson          #+#    #+#             //
+//   Updated: 2019/01/22 08:14:12 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
-#include <string>
+#include "Pony.class.hpp"
 
-class Pony
+Pony::Pony( int n )
 {
-public:
-	int number;
+	number = n;
+}
 
-	Pony( int n );
-	Pony( void );
-	~Pony( void );
-	static Pony	*ponyOnTheHeap( int n );
-	static Pony	*ponyOnTheStack( int n );
-};
+Pony::Pony( void )
+{
+	number = 42;
+}
+Pony::~Pony( void )
+{
+}
+
+Pony		*Pony::ponyOnTheHeap( int n )
+{
+	return (new Pony(n));
+}
+
+Pony		*Pony::ponyOnTheStack( int n )
+{
+	return (new Pony(n));
+}
