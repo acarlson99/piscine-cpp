@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/22 07:52:31 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/22 08:20:16 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/22 08:31:08 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -20,4 +20,5 @@ int main()
 
 	std::cout << p1->number << std::endl << p2.number << std::endl;
 	delete p1;
+	return (0);
 }
