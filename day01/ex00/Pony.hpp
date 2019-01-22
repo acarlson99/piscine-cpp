@@ -6,11 +6,14 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/22 08:14:01 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/22 08:19:12 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/22 10:19:52 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
-#include <string>
+#ifndef PONY_CLASS_HPP
+# define PONY_CLASS_HPP
+
+# include <string>
 
 class Pony
 {
@@ -23,3 +26,5 @@ public:
 	static Pony	*ponyOnTheHeap( int n );
 	static Pony	ponyOnTheStack( int n );
 };
+
+#endif
