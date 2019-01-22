@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/21 09:02:13 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/21 16:39:53 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/21 18:53:45 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -68,22 +68,31 @@ void	Account::displayAccountsInfos( void )
 void	Account::makeDeposit( int deposit )
 {
 //	std::cout << "makeDeposit" << std::endl;
-	this->_amount += deposit;
+// index:0;p_amount:42;deposit:5;amount:47;nb_deposits:1
+	_displayTimestamp();
 	++this->_nbDeposits;
+	std::cout << "index:" << _accountIndex << ";p_amount:" << _amount << ";deposit:" << deposit << ";amount:" << _amount + deposit << ";nb_deposits:" << _nbDeposits << std::endl;
+	this->_amount += deposit;
+	++this->_totalNbDeposits;
+	this->_totalAmount += deposit;
+
 }
 
 bool	Account::makeWithdrawal( int withdrawal )
 {
 //	std::cout << "makeWithdrawal" << std::endl;
+// index:1;p_amount:819;withdrawal:34;amount:785;nb_withdrawals:1
 	_displayTimestamp();
 	if (this->_amount >= withdrawal)
 	{
-		std::cout << "account:" << _accountIndex << ";p_amount:" << _amount << ";deposits:" << _nbDeposits << ";withdrawals:" << _nbWithdrawals << std::endl;
-		this->_amount -= withdrawal;
 		++this->_nbWithdrawals;
+		std::cout << "index:" << _accountIndex << ";p_amount:" << _amount << ";withdrawal:" << withdrawal << ";amount:" << _amount - withdrawal << ";nb_withdrawals:" << _nbWithdrawals << std::endl;
+		this->_amount -= withdrawal;
+		++this->_totalNbWithdrawals;
+		this->_totalAmount -= withdrawal;
 		return (true);
 	}
-	std::cout << "account:" << _accountIndex << ";p_amount:" << _amount << ";withdrawl:refused" << std::endl;
+	std::cout << "index:" << _accountIndex << ";p_amount:" << _amount << ";withdrawal:refused" << std::endl;
 	return (false);
 }
 
