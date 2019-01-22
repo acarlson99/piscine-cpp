@@ -6,11 +6,13 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/22 09:52:06 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/22 13:00:03 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/22 13:46:06 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
 #include "Zombie.hpp"
+
+std::mt19937		mt_rand(time(0));
 
 std::string		Zombie::names[10] = {
 	"Jimothy",
@@ -39,22 +41,21 @@ Zombie::Zombie( std::string n, std::string t )
 	this->type = t;
 }
 
-Zombie::Zombie( std::string n )	// TODO: make this random
+Zombie::Zombie( std::string n )
 {
-	std::srand(time(0));
 	this->name = n;
-	this->type = types[rand() % 5];
+	this->type = types[mt_rand() % 5];
 }
 
-Zombie::Zombie( void )	// TODO: make this random
+Zombie::Zombie( void )
 {
-	std::srand(time(0));
-	this->name = names[rand() % 10];
-	this->type = types[rand() % 5];
+	this->name = names[mt_rand() % 10];
+	this->type = types[mt_rand() % 5];
 }
 
 Zombie::~Zombie( void )
 {
+	std::cout << this->name << " destroyed" << std::endl;
 }
 
 void		Zombie::announce( void ) const

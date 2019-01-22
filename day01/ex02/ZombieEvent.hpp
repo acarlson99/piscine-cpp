@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/22 09:53:30 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/22 12:55:39 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/22 13:43:44 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -20,12 +20,16 @@
 class ZombieEvent {
 
 private:
-	static std::string _zombieType;
+	static std::string	_zombieType;
+	static std::mt19937	mt_rand;
 
 public:
 	static Zombie*		newZombie(std::string name);
 	static Zombie*		newZombie( void );
 	static Zombie*		randomChump( void );
+	static void			setZombieType(std::string t);
 };
+
+void a();
 
 #endif

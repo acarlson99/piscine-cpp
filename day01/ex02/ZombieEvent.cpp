@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/22 09:53:48 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/22 12:50:33 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/22 13:03:21 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -33,4 +33,9 @@ Zombie		*ZombieEvent::randomChump( void )
 	Zombie *z = newZombie();
 	z->announce();
 	return (z);
+}
+
+void		ZombieEvent::setZombieType(std::string t)
+{
+	_zombieType = t;
 }
