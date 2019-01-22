@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/22 08:13:49 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/22 08:14:12 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/22 08:19:21 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -30,7 +30,7 @@ Pony		*Pony::ponyOnTheHeap( int n )
 	return (new Pony(n));
 }
 
-Pony		*Pony::ponyOnTheStack( int n )
+Pony		Pony::ponyOnTheStack( int n )
 {
-	return (new Pony(n));
+	return (Pony(n));
 }

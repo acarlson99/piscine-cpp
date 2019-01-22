@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/22 08:14:01 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/22 08:14:01 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/22 08:19:12 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -21,5 +21,5 @@ public:
 	Pony( void );
 	~Pony( void );
 	static Pony	*ponyOnTheHeap( int n );
-	static Pony	*ponyOnTheStack( int n );
+	static Pony	ponyOnTheStack( int n );
 };
