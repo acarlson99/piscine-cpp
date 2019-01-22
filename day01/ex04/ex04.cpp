@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/22 14:33:40 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/22 14:38:59 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/22 14:39:43 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -18,7 +18,6 @@ int main()
 	std::string		*bptr = &brain;
 	std::string&	bref = brain;
 
-	std::cout << brain << std::endl;
 	std::cout << *bptr << std::endl;
 	std::cout << bref << std::endl;
 }
