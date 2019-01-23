@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/23 09:54:42 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/23 11:07:45 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/23 11:12:57 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -15,7 +15,6 @@
 
 # include <iostream>
 # include <string>
-# include <stdexcept>
 
 class Fixed {
 
