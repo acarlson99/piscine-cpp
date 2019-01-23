@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/23 09:54:42 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/23 11:12:57 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/23 11:15:57 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -25,7 +25,8 @@ public:
 	~Fixed( void );
 	Fixed& operator=( Fixed const &cp);
 
-	int getRawBits( void ) const;
+	int		getRawBits( void ) const;
+	void	setRawBits( int const raw );
 
 private:
 	int		_fpvalue;

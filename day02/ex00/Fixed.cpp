@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/23 09:54:50 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/23 11:12:02 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/23 11:17:18 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -45,4 +45,10 @@ Fixed	&Fixed::operator=( Fixed const &cp)
 	std::cout << "Assignment operator called" << std::endl;
 	this->_fpvalue = cp.getRawBits();
 	return (*this);
+}
+
+void	Fixed::setRawBits( int const raw )
+{
+	std::cout << "Setting to raw value " << raw << std::endl;
+	this->_fpvalue = raw;
 }
