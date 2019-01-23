@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/23 09:54:50 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/23 12:52:23 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/23 13:10:57 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -50,7 +50,6 @@ void	Fixed::setRawBits( int const raw )
 int		Fixed::toInt( void ) const
 {
 	return _fpvalue >> _fractionalBits;
-	return _fpvalue;
 }
 
 float	Fixed::toFloat( void ) const
@@ -63,6 +62,28 @@ Fixed	&Fixed::operator=( Fixed const &cp)
 	this->_fpvalue = cp.getRawBits();
 	return (*this);
 }
+
+Fixed	Fixed::operator+( Fixed const &cp) const
+{
+	return (Fixed(this->toFloat() + cp.toFloat()));
+}
+
+Fixed	Fixed::operator-( Fixed const &cp) const
+{
+	return (Fixed(this->toFloat() - cp.toFloat()));
+}
+
+// Fixed	&Fixed::operator=( Fixed const &cp)
+// {
+// 	this->_fpvalue = cp.getRawBits();
+// 	return (*this);
+// }
+
+// Fixed	&Fixed::operator=( Fixed const &cp)
+// {
+// 	this->_fpvalue = cp.getRawBits();
+// 	return (*this);
+// }
 
 std::ostream	&operator<<( std::ostream &o, Fixed const &f )
 {

@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/23 09:54:50 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/23 12:48:30 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/23 13:11:56 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -57,7 +57,6 @@ void	Fixed::setRawBits( int const raw )
 int		Fixed::toInt( void ) const
 {
 	return _fpvalue >> _fractionalBits;
-	return _fpvalue;
 }
 
 float	Fixed::toFloat( void ) const
