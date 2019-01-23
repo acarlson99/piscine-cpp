@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/23 09:54:50 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/23 13:34:09 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/23 13:56:46 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -83,13 +83,25 @@ Fixed	Fixed::operator/( Fixed const &n) const
 	return (this->toFloat() / n.toFloat());
 }
 
-// bool operator>( Fixed const &n ) const;
-// bool operator<( Fixed const &n ) const;
-// bool operator>=( Fixed const &n)  const;
+bool Fixed::operator>( Fixed const &n ) const
+{
+	return (this->toFloat() > n.toFloat());
+}
+
+bool Fixed::operator<( Fixed const &n ) const
+{
+	return (this->toFloat() < n.toFloat());
+}
+
+bool Fixed::operator>=( Fixed const &n)  const
+{
+	return (this->toFloat() >= n.toFloat());
+}
+
 // bool operator<=( Fixed const &n)  const;
 bool	Fixed::operator==( Fixed const &n ) const
 {
-	return (this->_fpvalue == n._fpvalue);
+	return (this->toFloat() == n.toFloat());
 }
 
 // bool operator!=( Fixed const &n)  const;

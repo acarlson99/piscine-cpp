@@ -8,8 +8,8 @@ int main( void ) {
 	std::cout << b - c << std::endl;
 	std::cout << b * c << std::endl;
 	std::cout << b / c << std::endl;
-	std::cout << (b == c) << std::endl;
-	std::cout << (d == c) << std::endl;
+	std::cout << (b > c) << std::endl;
+	std::cout << (b < c) << std::endl;
 	// Fixed a;
 	// Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 	// std::cout << a << std::endl;
