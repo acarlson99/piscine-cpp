@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/23 09:54:42 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/23 13:05:31 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/23 13:31:00 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -35,7 +35,7 @@ public:
 	bool& operator<( Fixed const &n );
 	bool& operator>=( Fixed const &n );
 	bool& operator<=( Fixed const &n );
-	bool& operator==( Fixed const &n );
+	bool operator==( Fixed const &n ) const;
 	bool& operator!=( Fixed const &n );
 
 	Fixed operator+( Fixed const &n ) const;
