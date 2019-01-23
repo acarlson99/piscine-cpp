@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/22 13:54:46 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/22 14:05:58 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/23 00:26:26 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -15,7 +15,6 @@
 
 # include <iostream>
 # include <string>
-# include <vector>
 # include "Zombie.hpp"
 
 class ZombieHorde {
@@ -26,7 +25,7 @@ public:
 	void	announce( void ) const;
 
 private:
-	std::vector<Zombie *> _zombs;
+	std::array<Zombie *, INT_MAX> _zombs;
 
 };
 

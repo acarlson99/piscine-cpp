@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/22 09:52:15 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/22 13:42:25 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/23 00:18:21 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -15,7 +15,6 @@
 
 # include <iostream>
 # include <string>
-# include <vector>
 # include <random>
 
 class Zombie {
