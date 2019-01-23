@@ -6,22 +6,25 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/23 09:54:50 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/23 11:23:08 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/23 12:46:13 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
 #include "Fixed.hpp"
+#include <cmath>
 
 Fixed::Fixed( int n )		// TODO: convert to fixed(8) point value
 {
 	std::cout << "Constructor function called" << std::endl;
-	_fpvalue = n;
+	_fpvalue = n << _fractionalBits;
+//	_fpvalue = n;
+//	_fpvalue = (n / (1 << _fractionalBits));
 }
 
 Fixed::Fixed( float n )		// TODO: convert to fixed(8) point value
 {
 	std::cout << "Constructor function called" << std::endl;
-	_fpvalue = n;
+	_fpvalue = std::roundf(n * (1 << _fractionalBits));
 }
 
 Fixed::Fixed( void )
@@ -47,6 +50,23 @@ int		Fixed::getRawBits( void ) const
 	return (_fpvalue);
 }
 
+void	Fixed::setRawBits( int const raw )
+{
+	std::cout << "Setting to raw value " << raw << std::endl;
+	this->_fpvalue = raw;
+}
+
+int		Fixed::toInt( void ) const	// TODO: return integer
+{
+	return _fpvalue >> _fractionalBits;
+	return _fpvalue;
+}
+
+float	Fixed::toFloat( void ) const	// TODO: convert to float
+{
+	return ((double)_fpvalue / (1 << _fractionalBits));
+}
+
 Fixed	&Fixed::operator=( Fixed const &cp)
 {
 	std::cout << "Assignment operator called" << std::endl;
@@ -54,8 +74,8 @@ Fixed	&Fixed::operator=( Fixed const &cp)
 	return (*this);
 }
 
-void	Fixed::setRawBits( int const raw )
+std::ostream	&operator<<( std::ostream &o, Fixed const &f )
 {
-	std::cout << "Setting to raw value " << raw << std::endl;
-	this->_fpvalue = raw;
+	o << f.toFloat();
+	return (o);
 }
