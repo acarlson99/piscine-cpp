@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/23 09:54:50 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/23 14:20:19 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/23 15:24:58 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -39,7 +39,7 @@ Fixed::~Fixed( void )
 
 int		Fixed::getRawBits( void ) const
 {
-	return (_fpvalue);
+	return (this->_fpvalue);
 }
 
 void	Fixed::setRawBits( int const raw )
@@ -49,7 +49,7 @@ void	Fixed::setRawBits( int const raw )
 
 int		Fixed::toInt( void ) const
 {
-	return _fpvalue >> _fractionalBits;
+	return _fpvalue >> this->_fractionalBits;
 }
 
 float	Fixed::toFloat( void ) const
@@ -98,19 +98,26 @@ bool Fixed::operator>=( Fixed const &n)  const
 	return (this->toFloat() >= n.toFloat());
 }
 
-bool operator<=( Fixed const &n)  const
+bool Fixed::operator<=( Fixed const &n)  const
 {
 	return (this->toFloat() <= n.toFloat());
 }
 
-bool	Fixed::operator==( Fixed const &n ) const
+bool Fixed::operator==( Fixed const &n ) const
 {
 	return (this->toFloat() == n.toFloat());
 }
 
-bool operator!=( Fixed const &n)  const
+bool Fixed::operator!=( Fixed const &n)  const
 {
 	return (this->toFloat() != n.toFloat());
+}
+
+Fixed	Fixed::operator++( )// Fixed const &n )
+{
+	Fixed tmp = Fixed(this->_fpvalue);
+	++this->_fpvalue;
+	return (Fixed(tmp.toFloat()));
 }
 
 std::ostream	&operator<<( std::ostream &o, Fixed const &f )
