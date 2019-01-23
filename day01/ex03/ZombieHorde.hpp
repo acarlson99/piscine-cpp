@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/22 13:54:46 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/23 00:26:26 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/23 09:42:48 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -25,7 +25,8 @@ public:
 	void	announce( void ) const;
 
 private:
-	std::array<Zombie *, INT_MAX> _zombs;
+	int _zomb_num;
+	Zombie *_zombs[1000000];
 
 };
 
