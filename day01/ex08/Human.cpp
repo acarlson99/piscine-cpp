@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/22 20:26:24 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/23 00:22:36 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/23 00:23:58 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -39,8 +39,7 @@ void Human::intimidatingShout(std::string const & target)
 
 void Human::fortnitedance( std::string const & target )
 {
-	(void)target;
-	std::cout << "Invalid action" << std::endl;
+	std::cout << "Confusedly dancing at " << target << std::endl;
 }
 
 std::string arr[3] =
