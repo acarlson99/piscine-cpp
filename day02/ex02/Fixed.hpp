@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/23 09:54:42 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/23 15:24:56 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/23 15:49:22 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -43,10 +43,15 @@ public:
 	Fixed operator*( Fixed const &n ) const;
 	Fixed operator/( Fixed const &n ) const;
 
-	Fixed operator++( );
-	// Fixed &operator++( Fixed const &n, int n ) const;
-	// Fixed &operator--( Fixed const &n ) const;
-	// Fixed &operator--( Fixed const &n, int n ) const;
+	Fixed operator++( int );	// postfix
+	Fixed operator++( );	// prefix
+	Fixed operator--( int );	// postfix
+	Fixed operator--( );	// prefix
+
+	static Fixed &max( Fixed &a, Fixed &b );
+	static Fixed &max( Fixed const &a, Fixed const &b ) const;
+	static Fixed &min( Fixed &a, Fixed &b );
+	static Fixed &min( Fixed const &a, Fixed const &b ) const;
 
 private:
 	int		_fpvalue;

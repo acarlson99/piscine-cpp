@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/23 09:54:50 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/23 15:24:58 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/23 15:49:12 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -113,11 +113,50 @@ bool Fixed::operator!=( Fixed const &n)  const
 	return (this->toFloat() != n.toFloat());
 }
 
-Fixed	Fixed::operator++( )// Fixed const &n )
+Fixed	Fixed::operator++( int )
 {
-	Fixed tmp = Fixed(this->_fpvalue);
+	float n = this->toFloat();
+	this->_fpvalue++;
+	return (Fixed(n));
+}
+
+Fixed	Fixed::operator++( void )
+{
 	++this->_fpvalue;
-	return (Fixed(tmp.toFloat()));
+	return (*this);
+}
+
+Fixed	Fixed::operator--( int )
+{
+	float n = this->toFloat();
+	this->_fpvalue--;
+	return (Fixed(n));
+}
+
+Fixed	Fixed::operator--( void )
+{
+	--this->_fpvalue;
+	return (*this);
+}
+
+Fixed	&Fixed::max( Fixed &a, Fixed &b )
+{
+	return (a > b ? a : b);
+}
+
+Fixed	&Fixed::max( Fixed const &a, Fixed const &b ) const
+{
+	return (a > b ? a : b);
+}
+
+Fixed	&Fixed::min( Fixed &a, Fixed &b )
+{
+	return (a < b ? a : b);
+}
+
+Fixed	&Fixed::min( Fixed const &a, Fixed const &b ) const
+{
+	return (a < b ? a : b);
 }
 
 std::ostream	&operator<<( std::ostream &o, Fixed const &f )
