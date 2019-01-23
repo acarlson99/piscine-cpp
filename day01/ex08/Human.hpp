@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/22 20:23:40 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/22 23:28:48 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/23 00:21:04 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -16,9 +16,6 @@
 # include <iostream>
 # include <string>
 # include <functional>
-# include <vector>
-
-typedef void(*funptr)(std::string const &s);
 
 class Human {
 
@@ -28,13 +25,12 @@ public:
 	Human( void );
 	Human( Human const & cp);
 	~Human( void );
-private:
-	std::vector<funptr> ftab;
 
-	void meleeAttack(std::string const & target) const;
-	void rangedAttack(std::string const & target) const;
-	void intimidatingShout(std::string const & target) const;
-	void fortnitedance( void ) const;
+private:
+	void meleeAttack(std::string const & target) ;
+	void rangedAttack(std::string const & target) ;
+	void intimidatingShout(std::string const & target) ;
+	void fortnitedance(std::string const & target);
 };
 
 #endif
