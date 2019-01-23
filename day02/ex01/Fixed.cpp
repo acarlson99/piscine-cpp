@@ -6,22 +6,20 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/23 09:54:50 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/23 12:46:13 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/23 12:48:30 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
 #include "Fixed.hpp"
 #include <cmath>
 
-Fixed::Fixed( int n )		// TODO: convert to fixed(8) point value
+Fixed::Fixed( int n )
 {
 	std::cout << "Constructor function called" << std::endl;
 	_fpvalue = n << _fractionalBits;
-//	_fpvalue = n;
-//	_fpvalue = (n / (1 << _fractionalBits));
 }
 
-Fixed::Fixed( float n )		// TODO: convert to fixed(8) point value
+Fixed::Fixed( float n )
 {
 	std::cout << "Constructor function called" << std::endl;
 	_fpvalue = std::roundf(n * (1 << _fractionalBits));
@@ -56,13 +54,13 @@ void	Fixed::setRawBits( int const raw )
 	this->_fpvalue = raw;
 }
 
-int		Fixed::toInt( void ) const	// TODO: return integer
+int		Fixed::toInt( void ) const
 {
 	return _fpvalue >> _fractionalBits;
 	return _fpvalue;
 }
 
-float	Fixed::toFloat( void ) const	// TODO: convert to float
+float	Fixed::toFloat( void ) const
 {
 	return ((double)_fpvalue / (1 << _fractionalBits));
 }
