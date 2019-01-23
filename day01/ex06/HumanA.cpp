@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/22 17:50:06 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/22 18:08:39 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/22 18:12:04 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -20,7 +20,7 @@ HumanA::~HumanA( void )
 {
 }
 
-void		HumanA::attack( void )
+void		HumanA::attack( void ) const
 {
 	std::cout << name << " attacks with his " << weapon.type << std::endl;
 }
