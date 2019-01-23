@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/22 15:37:30 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/22 15:37:42 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/22 17:43:57 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -19,10 +19,13 @@
 class Weapon {
 
 public:
+	std::string	type;
+
 	Weapon( std::string );
 	Weapon( void );
-	Weapon( Weapon const & cp);
 	~Weapon( void );
+
+	void	setType( std::string name );
 
 private:
 
