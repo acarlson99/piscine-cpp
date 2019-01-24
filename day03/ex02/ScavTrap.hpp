@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/24 11:25:10 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/24 12:35:12 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/24 13:54:19 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -38,16 +38,6 @@ public:
 	void				rangedAttack(std::string const &target) const;
 	void				challengeNewcomer( void ) const;
 	
-	// std::string const	&getName( void ) const;
-	// int					getHealth( void ) const;
-	// int					getMaxHealth( void ) const;
-	// int					getEnergy( void ) const;
-	// int					getMaxEnergy( void ) const;
-	// int					getLevel( void ) const;
-	// int					getMeleeAttackDamage( void ) const;
-	// int					getRangedAttackDamage( void ) const;
-	// int					getArmor( void ) const;
-
 private:
 	static std::string	_challenges[10];
 };

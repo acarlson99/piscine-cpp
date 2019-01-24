@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/24 11:44:22 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/24 12:21:36 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/24 14:03:45 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -57,7 +57,7 @@ unsigned int	ClapTrap::takeDamage(unsigned int amount)
 	if (this->_HP == 0)
 		std::cout << "Darn.  Death" << std::endl;
 	else
-		std::cout << "Ouch! " << amount << " damage set me to " << this->_HP << std::endl;
+		std::cout << "Ouch! " << amount << " damage set " << this->_name << " to " << this->_HP << std::endl;
 	return (this->_HP);
 }
 
@@ -67,7 +67,7 @@ unsigned int	ClapTrap::beRepaired(unsigned int amount)
 		this->_HP = this->_maxHP;
 	else
 		this->_HP = MIN(this->_HP + amount, this->_maxHP);
-	std::cout << amount << " health restored" << std::endl;
+	std::cout << amount << " health restored to " << this->_name << std::endl;
 	return (this->_HP);
 }
 
