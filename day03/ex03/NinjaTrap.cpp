@@ -6,23 +6,16 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/24 14:07:07 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/24 14:10:32 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/24 14:23:38 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
 #include "NinjaTrap.hpp"
 
-std::string		NinjaTrap::_hunterAttacks[10] = {
-	"whip",
-	"smack",
-	"noodle slap",
-	"spank",
-	"denigrate",
-	"shoot",
-	"finger",
-	"thonk",
-	"shock",
-	"sawblade",
+std::string		NinjaTrap::_shoebox[3] = {
+	"teleports behind",
+	"nothing personnel",
+	"unsheaths katana at",
 };
 
 NinjaTrap::NinjaTrap( std::string s )
@@ -64,15 +57,20 @@ NinjaTrap& NinjaTrap::operator=( NinjaTrap const &) { return *this; }
 
 void			NinjaTrap::meleeAttack(std::string const &target) const
 {
-	std::cout << this->getName() << " punched " << target << " for " << this->getMeleeAttackDamage() << " damage" << std::endl;
+	std::cout << this->getName() << " YAAAAAAAAAAAAA'd " << target << " for " << this->getMeleeAttackDamage() << " damage" << std::endl;
 }
 
 void			NinjaTrap::rangedAttack(std::string const &target) const
 {
-	std::cout << this->getName() << " whipped " << target << " for " << this->getRangedAttackDamage() << " damage" << std::endl;
+	std::cout << this->getName() << " threw pebbles at " << target << " for " << this->getRangedAttackDamage() << " damage" << std::endl;
 }
 
-void			NinjaTrap::ninjaShoebox(std::string const &target) const
+void			NinjaTrap::ninjaShoebox(FragTrap const &target) const
 {
-	std::cout << this->getName() << " " << _hunterAttacks[mt_rand() % 10] << "s " << target << std::endl;
+	std::cout << this->getName() << " " << _shoebox[mt_rand() % 3] << " " << target.getName() << std::endl;
+}
+
+void			NinjaTrap::ninjaShoebox(ScavTrap const &target) const
+{
+	std::cout << this->getName() << " " << _shoebox[mt_rand() % 3] << " " << target.getName() << std::endl;
 }

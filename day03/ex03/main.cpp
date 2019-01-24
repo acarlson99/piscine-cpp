@@ -6,12 +6,13 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/24 09:04:32 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/24 11:38:34 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/24 14:24:05 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "NinjaTrap.hpp"
 
 int main()
 {
@@ -48,4 +49,22 @@ int main()
 	bot2.meleeAttack("John");
 	bot2.rangedAttack("John");
 	bot2.challengeNewcomer();
+
+	NinjaTrap bot3 = std::string("Kuro");
+
+	std::cout << bot3.getName() << std::endl;
+	bot3.takeDamage(12);
+	std::cout << bot3.getHealth() << std::endl;
+	bot3.takeDamage(10000);
+	std::cout << bot3.getHealth() << std::endl;
+	bot3.beRepaired(10);
+	std::cout << bot3.getHealth() << std::endl;
+	bot3.beRepaired(10000);
+	std::cout << bot3.getHealth() << std::endl;
+	bot3.beRepaired(UINT_MAX);
+	std::cout << bot3.getHealth() << std::endl;
+	bot3.meleeAttack("John");
+	bot3.rangedAttack("John");
+	bot3.ninjaShoebox(bot1);
+	bot3.ninjaShoebox(bot2);
 }

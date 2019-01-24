@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/24 11:44:22 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/24 14:03:45 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/24 14:24:58 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -47,7 +47,7 @@ unsigned int	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->_HP == 0)
 	{
-		std::cout << "I'm already dead 😖" << std::endl;
+		std::cout << this->_name << " is already dead 😖" << std::endl;
 		return (0);
 	}
 	if (this->_HP - ((amount - this->_armorDamageReduction) > amount ? 0 : amount - this->_armorDamageReduction) > this->_HP)
@@ -55,7 +55,7 @@ unsigned int	ClapTrap::takeDamage(unsigned int amount)
 	else
 		this->_HP -= (amount - this->_armorDamageReduction) > amount ? 0 : amount - this->_armorDamageReduction;
 	if (this->_HP == 0)
-		std::cout << "Darn.  Death" << std::endl;
+		std::cout << "Darn.  Death of " << this->_name << std::endl;
 	else
 		std::cout << "Ouch! " << amount << " damage set " << this->_name << " to " << this->_HP << std::endl;
 	return (this->_HP);
