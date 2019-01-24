@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/24 11:25:12 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/24 11:37:57 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/24 11:42:43 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -68,7 +68,7 @@ unsigned int	ScavTrap::takeDamage(unsigned int amount)
 	else
 		this->_HP -= (amount - this->_armorDamageReduction) > amount ? 0 : amount - this->_armorDamageReduction;
 	if (this->_HP == 0)
-		std::cout << "I'M DEAD I'M DEAD OHMYGOD I'M DEAD" << std::endl;
+		std::cout << "Darn.  Death" << std::endl;
 	else
 		std::cout << "Ouch! " << amount << " damage set me to " << this->_HP << std::endl;
 	return (this->_HP);
