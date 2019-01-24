@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/23 09:54:50 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/23 15:56:37 by acarlson         ###   ########.fr       //
+/*   Updated: 2019/01/23 16:41:04 by acarlson         ###   ########.fr       */
 //                                                                            //
 // ************************************************************************** //
 
@@ -139,7 +139,7 @@ Fixed	Fixed::operator--( void )
 	return (*this);
 }
 
-Fixed	&Fixed::max( Fixed &a, Fixed &b ) const
+Fixed	&Fixed::max( Fixed &a, Fixed &b )
 {
 	return (a > b ? a : b);
 }
