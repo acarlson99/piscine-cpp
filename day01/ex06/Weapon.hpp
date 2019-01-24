@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/22 15:37:30 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/22 17:43:57 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/23 18:22:41 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -28,7 +28,6 @@ public:
 	void	setType( std::string name );
 
 private:
-
 };
 
 #endif

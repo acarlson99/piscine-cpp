@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/22 20:23:40 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/23 00:21:04 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/23 18:23:54 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -15,7 +15,6 @@
 
 # include <iostream>
 # include <string>
-# include <functional>
 
 class Human {
 

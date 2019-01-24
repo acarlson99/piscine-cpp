@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/22 18:09:21 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/22 18:22:12 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/23 18:21:49 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -20,9 +20,6 @@
 class HumanB {
 
 public:
-	std::string		name;
-	Weapon			*weapon;
-
 	HumanB( std::string string );
 	HumanB( void );
 	~HumanB( void );
@@ -30,6 +27,8 @@ public:
 	void		setWeapon( Weapon &w );
 
 private:
+	std::string		name;
+	Weapon			*weapon;
 
 };
 
