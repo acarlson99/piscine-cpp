@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/24 08:40:02 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/24 10:27:09 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/24 10:48:31 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include <random>
 
 # define MAX(a,b) (a > b ? a : b)
 # define MIN(a,b) (a < b ? a : b)
@@ -55,6 +56,8 @@ private:
 	unsigned int			_rangedAttackDamage;
 	int						_armorDamageReduction;
 
+	static std::mt19937	mt_rand;
+	static std::string	_hunterAttacks[10];
 };
 
 #endif
