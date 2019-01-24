@@ -6,6 +6,12 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/23 18:33:06 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/23 18:33:07 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/23 18:37:36 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
+
+#include "Fixed.hpp"
+
+int main(int argc, char **argv)
+{
+}
