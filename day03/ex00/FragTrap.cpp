@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/24 08:47:20 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/24 10:55:01 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/24 11:22:59 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -29,12 +29,12 @@ std::string		FragTrap::_hunterAttacks[10] = {
 
 FragTrap::FragTrap( std::string s ) : _HP(100), _maxHP(100), _EP(100), _maxEP(100), _level(1), _name(s), _meleeAttackDamage(30), _rangedAttackDamage(20), _armorDamageReduction(5)
 {
-	std::cout << "Constructor called for " << this->getName() << std::endl;
+	std::cout << "Start bootup sequence: " << this->getName() << std::endl;
 }
 
 FragTrap::FragTrap( void ) : _HP(100), _maxHP(100), _EP(100), _maxEP(100), _level(1), _name(std::string("Defaulty")), _meleeAttackDamage(30), _rangedAttackDamage(20), _armorDamageReduction(5)
 {
-	std::cout << "Constructor called for " << this->getName() << std::endl;
+	std::cout << "Start bootup sequence: " << this->getName() << std::endl;
 }
 
 FragTrap::FragTrap( FragTrap const & cp) { *this = cp; }
@@ -68,7 +68,7 @@ unsigned int	FragTrap::takeDamage(unsigned int amount)
 	else
 		this->_HP -= (amount - this->_armorDamageReduction) > amount ? 0 : amount - this->_armorDamageReduction;
 	if (this->_HP == 0)
-		std::cout << "Oh dear... " << amount << " damage has killed me" << std::endl;
+		std::cout << "I'M DEAD I'M DEAD OHMYGOD I'M DEAD" << std::endl;
 	else
 		std::cout << "Ouch! " << amount << " damage set me to " << this->_HP << std::endl;
 	return (this->_HP);
@@ -80,7 +80,7 @@ unsigned int	FragTrap::beRepaired(unsigned int amount)
 		this->_HP = this->_maxHP;
 	else
 		this->_HP = MIN(this->_HP + amount, this->_maxHP);
-	std::cout << "Healing for " << amount << std::endl;
+	std::cout << amount << " points of healsies!" << std::endl;
 	return (this->_HP);
 }
 
