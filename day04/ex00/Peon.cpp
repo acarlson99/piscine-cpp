@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/25 12:48:20 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/25 13:09:04 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/25 13:26:14 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -37,11 +37,5 @@ std::string const		&Peon::getName( void ) const
 
 void					Peon::getPolymorphed( void ) const
 {
-	std::cout << *this << " has turned into a pink pony ! PEON" << std::endl;
+	std::cout << _name << " has been turned into a pink pony !" << std::endl;
 }
-
-// std::ostream			&operator<<( std::ostream &o, Peon const &f )
-// {
-// 	o << "hnngh im " << f.getName() << " and i hate existing" << std::endl;
-// 	return (o);
-// }

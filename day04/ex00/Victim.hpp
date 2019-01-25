@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/25 12:25:45 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/25 12:45:07 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/25 13:13:52 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -26,7 +26,6 @@ public:
 	Victim& operator=( Victim const &);
 
 	std::string const		&getName( void ) const;
-	void					introduce( void ) const;
 	void					getPolymorphed( void ) const;
 
 private:

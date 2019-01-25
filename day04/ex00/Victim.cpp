@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/25 12:26:28 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/25 13:08:57 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/25 13:25:54 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -38,7 +38,7 @@ std::string const		&Victim::getName( void ) const
 
 void					Victim::getPolymorphed( void ) const
 {
-	std::cout << this->_name << " has been turned into a cute little sheep ! VICTIM" << std::endl;
+	std::cout << _name << " has been turned into a cute little sheep !" << std::endl;
 }
 
 std::ostream			&operator<<( std::ostream &o, Victim const &f )

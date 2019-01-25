@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/25 10:49:00 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/25 12:57:32 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/25 13:14:45 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -28,9 +28,8 @@ public:
 
 	std::string const	&getName( void ) const;
 	std::string const	&getTitle( void ) const;
-	void				introduce( void ) const;
 	void				polymorph( Victim const & ) const;
-//	void				polymorph( Peon const & ) const;
+	void				polymorph( Peon const & ) const;
 
 private:
 	Sorcerer( void );
