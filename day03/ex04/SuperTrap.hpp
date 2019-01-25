@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/24 14:33:42 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/24 14:38:42 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/24 21:27:10 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -16,9 +16,8 @@
 # include <iostream>
 # include <string>
 # include "FragTrap.hpp"
-# include "ScavTrap.hpp"
+# include "NinjaTrap.hpp"
 # include "ClapTrap.hpp"
-# include "FragTrap.hpp"
 
 class SuperTrap : public FragTrap, public NinjaTrap {
 
@@ -31,11 +30,8 @@ public:
 
 	void			meleeAttack(std::string const &target) const;
 	void			rangedAttack(std::string const &target) const;
-	void			ninjaShoebox(FragTrap const &target) const;
-	void			ninjaShoebox(ScavTrap const &target) const;
 
 private:
-	static std::string	_shoebox[3];
 };
 
 #endif

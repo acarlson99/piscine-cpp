@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/24 08:40:02 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/24 13:58:49 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/24 21:10:00 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -25,7 +25,7 @@
 #  define MIN(a,b) (a < b ? a : b)
 # endif
 
-class FragTrap : public ClapTrap {
+class FragTrap : virtual public ClapTrap {
 
 public:
 	FragTrap( std::string );

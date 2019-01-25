@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/24 09:04:32 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/24 14:37:41 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/24 21:20:58 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -69,7 +69,7 @@ int main()
 	bot3.ninjaShoebox(bot1);
 	bot3.ninjaShoebox(bot2);
 
-	SuperTrap bot4 = std::string("Kuro");
+	SuperTrap bot4 = std::string("Super");
 
 	std::cout << bot4.getName() << std::endl;
 	bot4.takeDamage(12);
@@ -85,5 +85,5 @@ int main()
 	bot4.meleeAttack("John");
 	bot4.rangedAttack("John");
 	bot4.ninjaShoebox(bot1);
-	bot4.ninjaShoebox(bot2);
+	bot4.vaulthunter_dot_exe("Timothy");
 }

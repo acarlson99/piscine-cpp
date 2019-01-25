@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/24 14:07:19 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/24 14:21:37 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/24 21:12:03 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -19,7 +19,7 @@
 # include "ScavTrap.hpp"
 # include "ClapTrap.hpp"
 
-class NinjaTrap : public ClapTrap {
+class NinjaTrap : public virtual ClapTrap {
 
 public:
 	NinjaTrap( std::string );

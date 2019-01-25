@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/24 14:07:07 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/24 14:23:38 by acarlson         ###   ########.fr       //
+/*   Updated: 2019/01/24 21:22:46 by acarlson         ###   ########.fr       */
 //                                                                            //
 // ************************************************************************** //
 
@@ -20,29 +20,29 @@ std::string		NinjaTrap::_shoebox[3] = {
 
 NinjaTrap::NinjaTrap( std::string s )
 {
-	_HP = 100;
-	_maxHP = 100;
-	_EP = 100;
-	_maxEP = 100;
+	_HP = 60;
+	_maxHP = 60;
+	_EP = 120;
+	_maxEP = 120;
 	_level = 1;
 	_name = s;
-	_meleeAttackDamage = 30;
-	_rangedAttackDamage = 20;
-	_armorDamageReduction = 5;
+	_meleeAttackDamage = 60;
+	_rangedAttackDamage = 5;
+	_armorDamageReduction = 0;
 	std::cout << "Start bootup sequence: " << this->getName() << std::endl;
 }
 
 NinjaTrap::NinjaTrap( void )
 {
-	_HP = 100;
-	_maxHP = 100;
-	_EP = 100;
-	_maxEP = 100;
+	_HP = 60;
+	_maxHP = 60;
+	_EP = 120;
+	_maxEP = 120;
 	_level = 1;
 	_name = std::string("Defaulty");
-	_meleeAttackDamage = 30;
-	_rangedAttackDamage = 20;
-	_armorDamageReduction = 5;
+	_meleeAttackDamage = 60;
+	_rangedAttackDamage = 5;
+	_armorDamageReduction = 0;
 	std::cout << "Start bootup sequence: " << this->getName() << std::endl;
 }
 
