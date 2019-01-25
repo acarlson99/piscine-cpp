@@ -6,14 +6,33 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/25 13:41:57 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/25 13:42:20 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/25 14:24:30 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
 #include "AWeapon.hpp"
 
-AWeapon::AWeapon( std::string ) : { }
-AWeapon::AWeapon( void ) { }
-AWeapon::AWeapon( AWeapon const & cp) { *this = cp; }
+std::string		AWeapon::_dname("peashooter");
+
+AWeapon::AWeapon( std::string const &name, int apcost, int damage ) : _name(name), _apcost(apcost), _damage(damage) { }
+
+AWeapon::AWeapon( void ) : _name(AWeapon::_dname), _apcost(10), _damage(10) { }
+
+AWeapon::AWeapon( AWeapon const & cp) : _name(cp._name) { *this = cp; }
 AWeapon::~AWeapon( void ) { }
 AWeapon& AWeapon::operator=( AWeapon const &) { return *this; }
+
+std::string const	&AWeapon::getName( void ) const
+{
+	return (this->_name);
+}
+
+int					AWeapon::getAPCost( void ) const
+{
+	return (this->_apcost);
+}
+
+int					AWeapon::getDamage( void ) const
+{
+	return (this->_damage);
+}

@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/25 13:42:03 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/25 13:42:10 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/25 14:22:43 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -19,13 +19,23 @@
 class AWeapon {
 
 public:
-	AWeapon( std::string );
+	AWeapon( std::string const &name, int apcost, int damage );
 	AWeapon( void );
 	AWeapon( AWeapon const & cp);
-	~AWeapon( void );
+	virtual ~AWeapon( void );
 	AWeapon& operator=( AWeapon const &);
 
+	std::string const	&getName( void ) const;
+	int					getAPCost( void ) const;
+	int					getDamage( void ) const;
+	virtual void		attack() const = 0;
+
 private:
+	std::string const	&_name;
+	int					_apcost;
+	int					_damage;
+
+	static std::string	_dname;
 
 };
 
