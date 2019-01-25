@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/25 10:49:00 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/25 12:11:11 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/25 12:57:32 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include <string>
+# include "Victim.hpp"
+# include "Peon.hpp"
 
 class Sorcerer {
 
@@ -26,11 +28,14 @@ public:
 
 	std::string const	&getName( void ) const;
 	std::string const	&getTitle( void ) const;
+	void				introduce( void ) const;
+	void				polymorph( Victim const & ) const;
+//	void				polymorph( Peon const & ) const;
 
 private:
 	Sorcerer( void );
-	std::string		name;
-	std::string		title;
+	std::string		_name;
+	std::string		_title;
 
 };
 
