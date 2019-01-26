@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/25 13:42:03 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/25 14:22:43 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/25 16:03:30 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -30,12 +30,13 @@ public:
 	int					getDamage( void ) const;
 	virtual void		attack() const = 0;
 
-private:
+protected:
 	std::string const	&_name;
 	int					_apcost;
 	int					_damage;
 
-	static std::string	_dname;
+private:
+	std::string	_dname;
 
 };
 
