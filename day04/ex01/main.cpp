@@ -1,6 +1,7 @@
 #include "AWeapon.hpp"
 #include "PlasmaRifle.hpp"
 #include "PowerFist.hpp"
+#include "SuperMutant.hpp"
 
 int main()
 {
@@ -10,6 +11,12 @@ int main()
 	PowerFist fist = PowerFist();
 	std::cout << fist.getName() << std::endl;
 	fist.attack();
+	SuperMutant sm = SuperMutant();
+	std::cout << sm.getHP() << std::endl;
+	sm.takeDamage(12);
+	std::cout << sm.getHP() << std::endl;
+	sm.takeDamage(1200);
+	std::cout << sm.getHP() << std::endl;
 	// Character* zaz = new Character("zaz");
 	// std::cout << *zaz;
 	// Enemy* b = new RadScorpion();
