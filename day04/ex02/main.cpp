@@ -10,6 +10,7 @@ int main()
 		TacticalMarine *joe = jim.clone();
 
 		std::cout << joe << " " << &jim;
+		delete joe;
 	}
 	{
 		ISpaceMarine* bob = new TacticalMarine;
