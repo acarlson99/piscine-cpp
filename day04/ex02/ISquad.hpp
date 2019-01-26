@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/25 19:38:14 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/25 20:22:47 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/25 21:00:22 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include "ISpaceMarine.hpp"
 
 class ISquad
 {
