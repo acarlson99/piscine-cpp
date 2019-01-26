@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/25 13:42:03 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/25 16:03:30 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/25 17:52:45 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -36,7 +36,7 @@ protected:
 	int					_damage;
 
 private:
-	std::string	_dname;
+	static std::string	_dname;
 
 };
 
