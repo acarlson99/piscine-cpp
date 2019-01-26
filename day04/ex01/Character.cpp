@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/25 18:44:58 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/25 19:33:33 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/25 19:46:13 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -32,7 +32,6 @@ Character& Character::operator=( Character const &) { return *this; }
 
 void		Character::attack( Enemy *e )
 {
-	std::cout << _AP << " " << _weapon->getAPCost() << std::endl;
 	if (_weapon == nullptr)
 		std::cout << "No weapon equipped" << std::endl;
 	else if (_AP - _weapon->getAPCost() >= 0)
@@ -51,6 +50,11 @@ void		Character::attack( Enemy *e )
 void		Character::equip( AWeapon *w )
 {
 	this->_weapon = w;
+}
+
+void		Character::recoverAP( void )
+{
+	this->_AP += 10;
 }
 
 std::string const	&Character::getName( void ) const
