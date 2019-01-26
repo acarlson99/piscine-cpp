@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/25 14:32:42 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/25 17:59:25 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/25 18:02:08 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -24,5 +24,5 @@ PlasmaRifle& PlasmaRifle::operator=( PlasmaRifle const &) { return *this; }
 
 void		PlasmaRifle::attack() const
 {
-	std::cout << "“* piouuu piouuu piouuu *" << std::endl;
+	std::cout << "* piouuu piouuu piouuu *" << std::endl;
 }

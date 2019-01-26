@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/25 14:32:15 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/25 17:58:23 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/25 18:00:17 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -26,7 +26,6 @@ public:
 	PlasmaRifle& operator=( PlasmaRifle const &);
 
 	virtual void		attack() const;
-//	std::string const	&getName( void ) const;
 
 private:
 	static std::string	_dname;
