@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/25 13:41:57 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/25 17:58:47 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/25 19:32:31 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -24,15 +24,15 @@ AWeapon& AWeapon::operator=( AWeapon const &) { return *this; }
 
 std::string const	&AWeapon::getName( void ) const
 {
-	return (this->_name);
+	return (_name);
 }
 
 int					AWeapon::getAPCost( void ) const
 {
-	return (this->_apcost);
+	return (_apcost);
 }
 
 int					AWeapon::getDamage( void ) const
 {
-	return (this->_damage);
+	return (_damage);
 }

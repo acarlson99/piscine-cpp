@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/25 14:32:42 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/25 18:02:08 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/25 19:32:14 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -14,9 +14,7 @@
 
 std::string		PlasmaRifle::_dname = std::string("PlasmaRifle");
 
-PlasmaRifle::PlasmaRifle( void ) : AWeapon(_dname, 21, 5)
-{
-}
+PlasmaRifle::PlasmaRifle( void ) : AWeapon(_dname, 5, 21) { }
 
 PlasmaRifle::PlasmaRifle( PlasmaRifle const & cp) { *this = cp; }
 PlasmaRifle::~PlasmaRifle( void ) { }
