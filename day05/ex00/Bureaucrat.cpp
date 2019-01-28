@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/28 11:44:31 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/28 13:38:37 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/28 14:04:18 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -64,7 +64,7 @@ void				Bureaucrat::decGrade( void ) throw(Bureaucrat::GradeTooHighException, Bu
 
 std::ostream		&operator<<( std::ostream &o, Bureaucrat const &b )
 {
-	o << b.getName() << " bureaucrat _grade " <<  b.getGrade();
+	o << b.getName() << " bureaucrat grade " <<  b.getGrade();
 	return (o);
 }
 

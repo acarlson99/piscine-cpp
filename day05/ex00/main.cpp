@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/28 11:44:36 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/28 13:37:56 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/28 14:08:31 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -43,6 +43,16 @@ int main()
 	}
 	catch (Bureaucrat::GradeTooHighException &e) {
 		std::cout << "Grade too high" << std::endl;
+	}
+	catch (Bureaucrat::GradeTooLowException &e) {
+		std::cout << "Grade too low" << std::endl;
+	}
+	try {
+		while (1)
+			tim.incGrade();
+	}
+	catch (Bureaucrat::GradeTooHighException &e) {
+		std::cout << tim << " grade too high.  Cannot raise it further" << std::endl;
 	}
 	catch (Bureaucrat::GradeTooLowException &e) {
 		std::cout << "Grade too low" << std::endl;
