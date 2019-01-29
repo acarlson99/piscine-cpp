@@ -6,11 +6,12 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/28 11:44:36 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/28 16:02:54 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/28 16:55:15 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
@@ -76,4 +77,8 @@ int main()
 	Bureaucrat tom = Bureaucrat("tom", 10);
 	tom.signForm(f);
 	std::cout << f << std::endl;
+
+	ShrubberyCreationForm scf = std::string("output");
+
+	scf.action();
 }
