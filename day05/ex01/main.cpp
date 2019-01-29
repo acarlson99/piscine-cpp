@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/28 11:44:36 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/28 15:59:19 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/28 16:02:54 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -71,4 +71,9 @@ int main()
 
 	std::cout << f << std::endl;
 	jim.signForm(f);
+	std::cout << f << std::endl;
+
+	Bureaucrat tom = Bureaucrat("tom", 10);
+	tom.signForm(f);
+	std::cout << f << std::endl;
 }
