@@ -6,12 +6,14 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/28 11:44:36 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/28 17:59:08 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/28 21:59:52 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
@@ -74,13 +76,25 @@ int main()
 	jim.signForm(f);
 	std::cout << f << std::endl;
 
-	Bureaucrat tom = Bureaucrat("tom", 10);
+	Bureaucrat tom = Bureaucrat("tom", 6);
 	tom.signForm(f);
 	std::cout << f << std::endl;
 
+	std::cout << "Shrub" << std::endl;
 	ShrubberyCreationForm scf = std::string("output");
 
 	tom.signForm(scf);
 	tom.executeForm(scf);
-	std::cout << tom << f << std::endl;
+	std::cout << tom << std::endl << f << std::endl;
+
+	RobotomyRequestForm rrf = RobotomyRequestForm("Timothy");
+	tom.signForm(rrf);
+	std::cout << rrf << std::endl;
+	tom.executeForm(rrf);
+	std::cout << rrf << std::endl;
+
+	PresidentialPardonForm ppf = PresidentialPardonForm("Zaphod Beeblebrox");
+//	tom.signForm(ppf);
+	tom.executeForm(ppf);
+	std::cout << ppf << std::endl;
 }

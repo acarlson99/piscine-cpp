@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/28 16:09:22 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/28 18:58:59 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/28 21:41:48 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -19,7 +19,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=( ShrubberyCreationForm c
 
 void		ShrubberyCreationForm::action(Bureaucrat &executor) const throw(Form::GradeTooLowException)
 {
-	if (this->getSigned() && executor.getGrade() < this->getGradeExec())
+	if (!(executor.getGrade() > this->getGradeExec()) && this->getSigned())
 	{
 		std::string filename = _target + "_shrubbery";
 
@@ -42,6 +42,6 @@ void		ShrubberyCreationForm::action(Bureaucrat &executor) const throw(Form::Grad
 		ofs << "      ||						" << std::endl;
 		ofs << "      ||						" << std::endl;
 	}
-	else if (executor.getGrade() <  this->getGradeExec())
+	else if (this->getSigned())
 		throw Form::GradeTooLowException();
 }

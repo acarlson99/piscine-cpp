@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/28 14:12:29 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/28 18:11:28 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/28 21:09:55 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -38,7 +38,7 @@ void				Form::beSigned( Bureaucrat const &b ) throw(Form::GradeTooLowException)
 	this->_signed = true;
 }
 
-void				Form::action( Bureaucrat &f ) throw(Form::GradeTooLowException)
+void				Form::action( Bureaucrat &f ) const throw(Form::GradeTooLowException)
 {
 	if (f.getGrade() > this->_gradeExec)
 		throw Form::GradeTooLowException();
