@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/28 16:07:00 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/28 16:51:15 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/28 18:59:39 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -24,7 +24,7 @@ public:
 	~ShrubberyCreationForm( void );
 	ShrubberyCreationForm& operator=( ShrubberyCreationForm const &);
 
-	void		action( void ) const;
+	void		action( Bureaucrat & ) const throw(Form::GradeTooLowException);
 
 private:
 	std::string const	_target;

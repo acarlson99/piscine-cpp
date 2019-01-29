@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/28 11:44:31 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/28 16:00:31 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/28 18:58:36 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -72,6 +72,17 @@ void				Bureaucrat::signForm( Form &f ) throw(Bureaucrat::GradeTooLowException)
 		return ;
 	}
 		std::cout << this->getName() << " signs " << f.getName() << std::endl;
+}
+
+void				Bureaucrat::executeForm( Form &f )
+{
+	try {
+		f.action(*this);
+		std::cout << "Form " << f.getName() << " executed" << std::endl;
+	}
+	catch (Form::GradeTooLowException) {
+		std::cout << "Oh fuck no" << std::endl;
+	}
 }
 
 std::ostream		&operator<<( std::ostream &o, Bureaucrat const &b )

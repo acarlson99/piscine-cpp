@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/28 11:44:52 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/28 15:24:57 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/28 18:12:06 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -48,6 +48,7 @@ public:
 	Bureaucrat& operator=( Bureaucrat const &);
 
 	void				signForm( Form &f ) throw(Bureaucrat::GradeTooLowException);
+	void				executeForm( Form &f );
 
 	std::string const	&getName( void ) const;
 	int					getGrade( void ) const;

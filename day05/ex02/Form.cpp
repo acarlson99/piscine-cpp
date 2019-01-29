@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/28 14:12:29 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/28 15:29:22 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/28 18:11:28 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -36,6 +36,14 @@ void				Form::beSigned( Bureaucrat const &b ) throw(Form::GradeTooLowException)
 	if (b.getGrade() > this->_gradeSign)
 		throw Form::GradeTooLowException();
 	this->_signed = true;
+}
+
+void				Form::action( Bureaucrat &f ) throw(Form::GradeTooLowException)
+{
+	if (f.getGrade() > this->_gradeExec)
+		throw Form::GradeTooLowException();
+	else
+		std::cout << "Executing " << this->_name << std::endl;
 }
 
 std::string const	&Form::getName( void ) const

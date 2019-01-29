@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/28 11:44:36 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/28 16:55:15 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/28 17:59:08 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -80,5 +80,7 @@ int main()
 
 	ShrubberyCreationForm scf = std::string("output");
 
-	scf.action();
+	tom.signForm(scf);
+	tom.executeForm(scf);
+	std::cout << tom << f << std::endl;
 }

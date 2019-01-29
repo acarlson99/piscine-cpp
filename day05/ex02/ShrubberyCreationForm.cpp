@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/28 16:09:22 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/28 17:47:32 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/28 18:58:59 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -17,26 +17,31 @@ ShrubberyCreationForm::ShrubberyCreationForm( ShrubberyCreationForm const & cp) 
 ShrubberyCreationForm::~ShrubberyCreationForm( void ) { }
 ShrubberyCreationForm& ShrubberyCreationForm::operator=( ShrubberyCreationForm const &) { return *this; }
 
-void		ShrubberyCreationForm::action() const
+void		ShrubberyCreationForm::action(Bureaucrat &executor) const throw(Form::GradeTooLowException)
 {
-	std::string filename = _target + "_shrubbery";
-
-	std::ofstream ofs;
-
-	ofs.open(filename.c_str(), std::ios::out);
-	if (!ofs.is_open())
+	if (this->getSigned() && executor.getGrade() < this->getGradeExec())
 	{
-		std::cout << "File open error" << std::endl;
-		return ;
+		std::string filename = _target + "_shrubbery";
+
+		std::ofstream ofs;
+
+		ofs.open(filename.c_str(), std::ios::out);
+		if (!ofs.is_open())
+		{
+			std::cout << "File open error" << std::endl;
+			return ;
+		}
+		ofs << "      /\\						" << std::endl;
+		ofs << "     /\\*\\						" << std::endl;
+		ofs << "    /\\O\\*\\					" << std::endl;
+		ofs << "   /*/\\/\\/\\					" << std::endl;
+		ofs << "  /\\O\\/\\*\\/\\				" << std::endl;
+		ofs << " /\\*\\/\\*\\/\\/\\				" << std::endl;
+		ofs << "/\\O\\/\\/*/\\/O/\\				" << std::endl;
+		ofs << "      ||						" << std::endl;
+		ofs << "      ||						" << std::endl;
+		ofs << "      ||						" << std::endl;
 	}
-	ofs << "      /\\						" << std::endl;
-	ofs << "     /\\*\\						" << std::endl;
-	ofs << "    /\\O\\*\\					" << std::endl;
-	ofs << "   /*/\\/\\/\\					" << std::endl;
-	ofs << "  /\\O\\/\\*\\/\\				" << std::endl;
-	ofs << " /\\*\\/\\*\\/\\/\\				" << std::endl;
-	ofs << "/\\O\\/\\/*/\\/O/\\				" << std::endl;
-	ofs << "      ||						" << std::endl;
-	ofs << "      ||						" << std::endl;
-	ofs << "      ||						" << std::endl;
+	else if (executor.getGrade() <  this->getGradeExec())
+		throw Form::GradeTooLowException();
 }
