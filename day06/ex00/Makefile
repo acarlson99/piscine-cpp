@@ -1,7 +1,7 @@
 CC = clang++
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 FILES = main.cpp
-NAME = test.out
+NAME = convert
 
 all: $(NAME)
 
