@@ -1,32 +1,19 @@
 // ************************************************************************** //
 //                                                                            //
 //                                                        :::      ::::::::   //
-//   Array.hpp                                          :+:      :+:    :+:   //
+//   Array.cpp                                          :+:      :+:    :+:   //
 //                                                    +:+ +:+         +:+     //
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
-//   Created: 2019/01/30 14:45:17 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/30 15:05:07 by acarlson         ###   ########.fr       //
+//   Created: 2019/01/30 15:03:31 by acarlson          #+#    #+#             //
+//   Updated: 2019/01/30 15:04:48 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
-#ifndef ARRAY_HPP
-# define ARRAY_HPP
+#include "Array.hpp"
 
-# include <iostream>
-# include <string>
-
-class Array {
-
-public:
-	Array( unsigned int );
-	Array( void );
-	Array( Array const & cp);
-	~Array( void );
-	Array& operator=( Array const &);
-
-private:
-
-};
-
-#endif
+Array::Array( unsigned int n ) : { }
+Array::Array( void ) { }
+Array::Array( Array const & cp) { *this = cp; }
+Array::~Array( void ) { }
+Array& Array::operator=( Array const &) { return *this; }
