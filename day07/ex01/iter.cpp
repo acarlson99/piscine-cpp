@@ -6,14 +6,14 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/30 12:32:52 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/30 15:06:30 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/30 15:37:28 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
 #include <iostream>
 
 template<class T>
-void		iter(T const arr[], int len, void (*f)(T))
+void		iter(T const *arr, int len, void (*f)(T))
 {
 	for (int i = 0; i < len; i++)
 		f(arr[i]);
