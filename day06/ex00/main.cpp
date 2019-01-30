@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 11:52:08 by acarlson          #+#    #+#             */
-//   Updated: 2019/01/29 15:17:40 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/29 16:08:50 by acarlson         ###   ########.fr       //
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,15 @@ int main(int argc, char **argv)
 		num = atof(argv[1]);
 	char	numc = static_cast<char>(num);
 	std::cout << "char: ";
-	if ((s == "nan") || (s == "-inf") || (s == "+inf") || s == "inf")
+	if ((s == "nan") || (s == "-inf") || (s == "+inf") || (num > INT_MAX) || isnan(num))
 		std::cout << "impossible" << std::endl;
-	else if (numc < 040)
+	else if (num < 040 || num > 126)
 		std::cout << "Non displayable" << std::endl;
 	else
 		std::cout << numc << std::endl;
 	int		numi = static_cast<int>(num);
 	std::cout << "int: ";
-	if ((s == "nan") || (s == "-inf") || (s == "+inf"))
+	if ((s == "nan") || (s == "-inf") || (s == "+inf") || (num > INT_MAX) || isnan(num))
 		std::cout << "impossible" << std::endl;
 	else
 		std::cout << numi << std::endl;
