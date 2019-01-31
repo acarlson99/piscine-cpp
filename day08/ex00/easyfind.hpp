@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/30 20:15:33 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/30 21:12:22 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/31 12:11:57 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -14,12 +14,9 @@
 # define EASYFIND_HPP
 
 template<typename T>
-unsigned		easyfind(T container, int n)
+unsigned		easyfind(T c, int n)
 {
-	for (auto it = std::begin(container); it != std::end(container); it++)
-		if (*it == n)
-			return (1);
-	return (0);
+	return (std::find(c.begin(), c.end(), n) != c.end());
 }
 
 #endif
