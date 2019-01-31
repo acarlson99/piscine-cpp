@@ -1,22 +1,28 @@
 // ************************************************************************** //
 //                                                                            //
 //                                                        :::      ::::::::   //
-//   easyfind.hpp                                       :+:      :+:    :+:   //
+//   main.cpp                                           :+:      :+:    :+:   //
 //                                                    +:+ +:+         +:+     //
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
-//   Created: 2019/01/30 20:15:33 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/31 14:14:39 by acarlson         ###   ########.fr       //
+//   Created: 2019/01/31 14:16:53 by acarlson          #+#    #+#             //
+//   Updated: 2019/01/31 15:39:57 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
-#ifndef EASYFIND_HPP
-# define EASYFIND_HPP
+#include "span.hpp"
 
-template<typename T>
-unsigned		easyfind(T c, int n)
+int main()
 {
-	return (std::find(c.begin(), c.end(), n) != c.end());
-}
+	try {
+	Span		a(1);
 
-#endif
+	static_cast<void>(a);
+	a.addNumber(9);
+	Span		b(a);
+//	b.addNumber(9);
+	}
+	catch (Span::BadSizeException &ex) {
+		std::cout << "Use the good size 🅱️ ruh" << std::endl;
+	}
+}
