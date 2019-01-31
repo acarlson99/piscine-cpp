@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/30 14:45:10 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/30 16:52:50 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/30 18:05:04 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -15,6 +15,11 @@
 
 int main()
 {
-	Array<int>	b = 13;
+	Array<int>	b = 10;
+	// std::cout << "A" << std::endl;
+	b[3] = 9;
+	Array<int>	x = b;
+	b[3] = 12;
+	std::cout << x[3] << std::endl;
 	return (0);
 }

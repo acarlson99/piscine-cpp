@@ -5,8 +5,8 @@
 //                                                    +:+ +:+         +:+     //
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
-//   Created: 2019/01/30 14:45:17 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/30 16:48:36 by acarlson         ###   ########.fr       //
+//   Created: 2019/01/30 17:52:58 by acarlson          #+#    #+#             //
+//   Updated: 2019/01/30 18:04:16 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -23,10 +23,8 @@ public:
 	Array( unsigned int n ) : _size(n)
 		{
 			_arr = new T[n];
-			for (unsigned i = 0; i < _size; i++)
-				_arr[i] = i;
 		}
-	Array( void )
+	Array( void ) : _size(0)
 		{
 		}
 	Array( Array const & cp)
@@ -36,15 +34,24 @@ public:
 	~Array( void )
 		{
 		}
-	Array& operator=( Array const &)
+	Array& operator=( Array const &cp)
 		{
+			this->_size = cp._size;
+			this->_arr = new T[_size];
+			for (unsigned int i = 0; i < _size; i++)
+				_arr[i] = cp[i];
 		}
-	int operator[]( unsigned int n )
+	T* operator[]( unsigned int n ) throw(std::exception)
 		{
 			if (n < _size)
-				return (_arr[n]);
+				return (&_arr[n]);
 			else
-				return (0);
+				throw std::exception();
+		}
+
+	unsigned int	size( void ) const
+		{
+			return (_size);
 		}
 
 private:

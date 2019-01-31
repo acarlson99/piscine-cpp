@@ -14,3 +14,6 @@ fclean:
 	rm -f $(NAME)
 
 re: fclean all
+
+j:
+	$(CC) $(CPPFLAGS) $(FILES) -o $(NAME)
