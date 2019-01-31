@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/30 17:52:58 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/30 18:04:16 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/30 18:21:01 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -22,7 +22,9 @@ class Array {
 public:
 	Array( unsigned int n ) : _size(n)
 		{
-			_arr = new T[n];
+			_arr = new T*[n];
+			for (unsigned int i = 0; i < n; i++)
+				_arr[i] = new T;
 		}
 	Array( void ) : _size(0)
 		{
@@ -41,7 +43,7 @@ public:
 			for (unsigned int i = 0; i < _size; i++)
 				_arr[i] = cp[i];
 		}
-	T* operator[]( unsigned int n ) throw(std::exception)
+	T** operator[]( unsigned int n ) throw(std::exception)
 		{
 			if (n < _size)
 				return (&_arr[n]);
@@ -55,7 +57,7 @@ public:
 		}
 
 private:
-	T				*_arr;
+	T				**_arr;
 	unsigned int	_size;
 
 };
