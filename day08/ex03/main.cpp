@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/31 16:07:31 by acarlson          #+#    #+#             //
-//   Updated: 2019/02/01 00:03:28 by acarlson         ###   ########.fr       //
+//   Updated: 2019/02/01 10:35:25 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -21,25 +21,25 @@
 #include "ValDec.hpp"
 #include "TakeInput.hpp"
 
-void	addInstruction(std::vector<AInstruction>& v, char c)
+void	addInstruction(std::vector<AInstruction *>& v, char c)
 {
 	static_cast<void>(v);
 	if (c == '[')
-		v.push_back(OpeningBracket());
+		v.push_back(new OpeningBracket());
 	else if (c == ']')
-		v.push_back(ClosingBracket());
+		v.push_back(new ClosingBracket());
 	else if (c == '.')
-		v.push_back(Out());
+		v.push_back(new Out());
 	else if (c == '<')
-		v.push_back(PtrDec());
+		v.push_back(new PtrDec());
 	else if (c == '>')
-		v.push_back(PtrInc());
+		v.push_back(new PtrInc());
 	else if (c == '-')
-		v.push_back(ValDec());
+		v.push_back(new ValDec());
 	else if (c == '+')
-		v.push_back(ValInc());
+		v.push_back(new ValInc());
 	else if (c == ',')
-		v.push_back(TakeInput());
+		v.push_back(new TakeInput());
 	std::cout << c;
 }
 
@@ -52,7 +52,7 @@ int		main(int argc, char **argv)
 	}
 	static int					tape[4096] = { 0 };
 	static_cast<void>(tape);
-	std::vector<AInstruction>	instructions;
+	std::vector<AInstruction *>	instructions;
 	unsigned long				i = 0;
 	std::fstream				fin(argv[1]);
 	char						c;
@@ -64,7 +64,7 @@ int		main(int argc, char **argv)
 	fin.close();
 	while (i < instructions.size())
 	{
-		instructions[i].execute(tape, instructions, &i, NULL);
+		instructions[i]->execute(tape, instructions, &i, NULL);
 		++i;
 	}
 	return (0);

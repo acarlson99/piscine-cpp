@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/31 20:20:34 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/31 23:22:24 by acarlson         ###   ########.fr       //
+//   Updated: 2019/02/01 10:33:21 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -27,7 +27,7 @@ public:
 	~ValDec( void );
 	ValDec& operator=( ValDec const &);
 
-	virtual void	execute(int tape[INT_MAX], std::vector<AInstruction>&, unsigned long *, int *);
+	virtual void	execute(int tape[INT_MAX], std::vector<AInstruction *>&, unsigned long *, int *);
 
 private:
 
