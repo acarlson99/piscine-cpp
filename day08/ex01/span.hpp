@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/31 14:18:04 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/31 15:51:21 by acarlson         ###   ########.fr       //
+//   Updated: 2019/02/01 15:16:04 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -36,6 +36,7 @@ public:
 	};
 
 	void		addNumber( int ) throw(Span::BadSizeException);
+	void		addNumber( int a, int b ) throw(Span::BadSizeException);
 
 	int			shortestSpan( void ) throw(Span::BadSizeException);
 	int			longestSpan( void ) throw(Span::BadSizeException);

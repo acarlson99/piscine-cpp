@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/31 14:17:00 by acarlson          #+#    #+#             //
-//   Updated: 2019/02/01 15:10:52 by acarlson         ###   ########.fr       //
+//   Updated: 2019/02/01 15:18:11 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -14,7 +14,7 @@
 
 Span::Span( unsigned int size ) throw(Span::BadSizeException) : _size(size)
 {
-	if (size == 0)
+	if (size == 0 || size > 30000000)
 		throw Span::BadSizeException();
 	std::vector<int>	_nums(_size);
 }
@@ -37,6 +37,23 @@ void		Span::addNumber( int n ) throw(Span::BadSizeException)
 	if (_nums.size() >= this->_size)
 		throw Span::BadSizeException();
 	_nums.push_back(n);
+}
+
+void		Span::addNumber( int a, int b ) throw(Span::BadSizeException)
+{
+	try {
+		if (a > b)
+		{
+			a ^= b;
+			b ^= a;
+			a ^= b;
+		}
+		for (; a <= b; a++)
+			this->addNumber(a);
+	}
+	catch (Span::BadSizeException) {
+		throw Span::BadSizeException();
+	}
 }
 
 int			Span::shortestSpan( void ) throw(Span::BadSizeException)
