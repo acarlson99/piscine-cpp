@@ -1,18 +1,22 @@
 // ************************************************************************** //
 //                                                                            //
 //                                                        :::      ::::::::   //
-//   ValDec.cpp                                         :+:      :+:    :+:   //
+//   AInstruction.cpp                                   :+:      :+:    :+:   //
 //                                                    +:+ +:+         +:+     //
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
-//   Created: 2019/01/31 20:20:46 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/31 22:00:36 by acarlson         ###   ########.fr       //
+//   Created: 2019/01/31 22:12:23 by acarlson          #+#    #+#             //
+//   Updated: 2019/01/31 22:13:09 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
-#include "ValDec.hpp"
+#include "AInstruction.hpp"
 
-ValDec::ValDec( void ) { }
-ValDec::ValDec( ValDec const & cp) { *this = cp; }
-ValDec::~ValDec( void ) { }
-ValDec& ValDec::operator=( ValDec const &) { return *this; }
+AInstruction::AInstruction( void ) { }
+AInstruction::AInstruction( AInstruction const & cp) { *this = cp; }
+AInstruction::~AInstruction( void ) { }
+AInstruction& AInstruction::operator=( AInstruction const &cp)
+{
+	this->c = cp.c;
+	return *this;
+}

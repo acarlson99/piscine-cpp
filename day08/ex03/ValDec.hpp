@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/31 20:20:34 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/31 20:39:17 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/31 22:07:50 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -18,7 +18,7 @@
 # include <stdexcept>
 # include "AInstruction.hpp"
 
-class ValDec {
+class ValDec: public AInstruction {
 
 public:
 	ValDec( std::string );

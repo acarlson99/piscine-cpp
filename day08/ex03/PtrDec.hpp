@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/31 20:20:35 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/31 20:39:17 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/31 22:08:59 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -18,7 +18,7 @@
 # include <stdexcept>
 # include "AInstruction.hpp"
 
-class PtrDec {
+class PtrDec: public AInstruction {
 
 public:
 	PtrDec( std::string );

@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/31 16:07:31 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/31 21:49:16 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/31 22:01:12 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -26,19 +26,19 @@ void	addInstruction(std::vector<AInstruction>& v, char c)
 	static_cast<void>(v);
 	if (c == '[')
 		v.push_back(OpeningBracket());
-	if (c == ']')
+	else if (c == ']')
 		v.push_back(ClosingBracket());
-	if (c == '.')
+	else if (c == '.')
 		v.push_back(Out());
-	if (c == '<')
+	else if (c == '<')
 		v.push_back(PtrDec());
-	if (c == '>')
+	else if (c == '>')
 		v.push_back(PtrInc());
-	if (c == '-')
+	else if (c == '-')
 		v.push_back(ValDec());
-	if (c == '+')
+	else if (c == '+')
 		v.push_back(ValInc());
-	if (c == ',')
+	else if (c == ',')
 		v.push_back(TakeInput());
 	std::cout << c;
 }
