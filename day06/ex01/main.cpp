@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/29 18:49:06 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/29 21:13:15 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/31 20:13:21 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -64,7 +64,11 @@ Data		*deserialize( void *raw)
 
 int main()
 {
-	Data *d = deserialize(serialize());
+	void *raw = serialize();
+	std::cout.write(static_cast<const char *>(raw), 20);
+	Data *d = deserialize(raw);
+	std::cout << std::endl;
+	std::cout.write(reinterpret_cast<const char *>(d), sizeof(*d));
 	std::cout << d->s1 << std::endl;
 	std::cout << d->s2 << std::endl;
 	std::cout << d->n << std::endl;
