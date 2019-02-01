@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/31 16:17:28 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/31 16:41:00 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/31 20:39:17 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -16,6 +16,7 @@
 # include <iostream>
 # include <string>
 # include <vector>
+# include "AInstruction.hpp"
 
 class AInstruction {
 

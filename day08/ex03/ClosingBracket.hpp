@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/31 20:20:40 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/31 20:23:37 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/31 21:20:22 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -15,7 +15,7 @@
 
 # include <iostream>
 # include <string>
-# include <stdexcept>
+# include "AInstruction.hpp"
 
 class ClosingBracket {
 
@@ -25,6 +25,8 @@ public:
 	ClosingBracket( ClosingBracket const & cp);
 	~ClosingBracket( void );
 	ClosingBracket& operator=( ClosingBracket const &);
+
+	virtual void	execute(int tape[INT_MAX], std::vector<AInstruction>, int *, int *);
 
 private:
 

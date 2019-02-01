@@ -6,25 +6,28 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/31 20:20:34 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/31 20:23:37 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/31 20:39:17 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
-#ifndef TAKE_HPP
-# define TAKE_HPP
+#ifndef TAKEINPUT_HPP
+# define TAKEINPUT_HPP
 
 # include <iostream>
 # include <string>
 # include <stdexcept>
+# include "AInstruction.hpp"
 
-class Take {
+class TakeInput {
 
 public:
-	Take( std::string );
-	Take( void );
-	Take( Take const & cp);
-	~Take( void );
-	Take& operator=( Take const &);
+	TakeInput( std::string );
+	TakeInput( void );
+	TakeInput( TakeInput const & cp);
+	~TakeInput( void );
+	TakeInput& operator=( TakeInput const &);
+
+	virtual void	execute(int tape[INT_MAX], std::vector<AInstruction>, int *, int *);
 
 private:
 
