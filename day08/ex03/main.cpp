@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/31 16:07:31 by acarlson          #+#    #+#             //
-//   Updated: 2019/02/01 14:05:24 by acarlson         ###   ########.fr       //
+//   Updated: 2019/02/01 14:14:47 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -40,7 +40,6 @@ void	addInstruction(std::vector<AInstruction *>& v, char c)
 		v.push_back(new ValInc());
 	else if (c == ',')
 		v.push_back(new TakeInput());
-	std::cout << c;
 }
 
 int		main(int argc, char **argv)
@@ -63,16 +62,10 @@ int		main(int argc, char **argv)
 		if (valid.find_first_of(c) != std::string::npos)
 			addInstruction(instructions, c);
 	fin.close();
-	std::cout << std::endl;
-	int b = 0;
 	while (i < instructions.size())
 	{
 		instructions[i]->execute(tape, instructions, &i, &j);
-//		std::cout << " i = " << i << " tape[" << j << "] = " << static_cast<int>(tape[j]) << std::endl;
 		++i;
-//		b++;
-		if (b > 200)
-			break ;
 	}
 	return (0);
 }
