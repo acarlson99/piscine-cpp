@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/31 16:07:31 by acarlson          #+#    #+#             //
-//   Updated: 2019/02/01 11:59:37 by acarlson         ###   ########.fr       //
+//   Updated: 2019/02/01 14:05:24 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -50,7 +50,7 @@ int		main(int argc, char **argv)
 		std::cout << "usage: " << argv[0] << " filename" << std::endl;
 		return (1);
 	}
-	static int					tape[4096] = { 0 };
+	static unsigned char		tape[4096] = { 0 };
 	static_cast<void>(tape);
 	std::vector<AInstruction *>	instructions;
 	unsigned long				i = 0;
@@ -64,10 +64,15 @@ int		main(int argc, char **argv)
 			addInstruction(instructions, c);
 	fin.close();
 	std::cout << std::endl;
+	int b = 0;
 	while (i < instructions.size())
 	{
 		instructions[i]->execute(tape, instructions, &i, &j);
+//		std::cout << " i = " << i << " tape[" << j << "] = " << static_cast<int>(tape[j]) << std::endl;
 		++i;
+//		b++;
+		if (b > 200)
+			break ;
 	}
 	return (0);
 }
