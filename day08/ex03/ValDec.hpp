@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/31 20:20:34 by acarlson          #+#    #+#             //
-//   Updated: 2019/02/01 10:48:40 by acarlson         ###   ########.fr       //
+//   Updated: 2019/02/01 11:08:02 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -27,7 +27,7 @@ public:
 	~ValDec( void );
 	ValDec& operator=( ValDec const &);
 
-	void			execute(int tape[INT_MAX], std::vector<AInstruction *>&, unsigned long *, int *);
+	void			execute(int (&tape)[4096], std::vector<AInstruction *>&, unsigned long *, int *);
 	char			getCh( void ) const;
 
 private:

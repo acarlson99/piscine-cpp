@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/31 20:20:48 by acarlson          #+#    #+#             //
-//   Updated: 2019/02/01 10:39:54 by acarlson         ###   ########.fr       //
+//   Updated: 2019/02/01 11:24:09 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -17,9 +17,9 @@ Out::Out( Out const & cp) { *this = cp; }
 Out::~Out( void ) { }
 Out& Out::operator=( Out const &) { return *this; }
 
-void	Out::execute(int tape[INT_MAX], std::vector<AInstruction *>&, unsigned long *i, int *)
+void	Out::execute(int (&tape)[4096], std::vector<AInstruction *>&, unsigned long *, int *j)
 {
-	std::cout << tape[*i];
+	std::cout << static_cast<char>(tape[*j]);
 }
 
 char		Out::getCh( void ) const

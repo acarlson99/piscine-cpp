@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/31 16:07:31 by acarlson          #+#    #+#             //
-//   Updated: 2019/02/01 10:35:25 by acarlson         ###   ########.fr       //
+//   Updated: 2019/02/01 11:21:13 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -57,6 +57,7 @@ int		main(int argc, char **argv)
 	std::fstream				fin(argv[1]);
 	char						c;
 	std::string					valid = ".,[]+-<>";
+	int							j;
 
 	while (fin.get(c))
 		if (valid.find_first_of(c) != std::string::npos)
@@ -64,7 +65,7 @@ int		main(int argc, char **argv)
 	fin.close();
 	while (i < instructions.size())
 	{
-		instructions[i]->execute(tape, instructions, &i, NULL);
+		instructions[i]->execute(tape, instructions, &i, &j);
 		++i;
 	}
 	return (0);
