@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/31 14:17:00 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/31 15:52:35 by acarlson         ###   ########.fr       //
+//   Updated: 2019/02/01 15:10:52 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -37,22 +37,27 @@ void		Span::addNumber( int n ) throw(Span::BadSizeException)
 	if (_nums.size() >= this->_size)
 		throw Span::BadSizeException();
 	_nums.push_back(n);
-	for (unsigned long i = 0; i < this->_nums.size(); i++)
-		std::cout << this->_nums[i] << std::endl;
 }
 
 int			Span::shortestSpan( void ) throw(Span::BadSizeException)
 {
 	if (this->_nums.size() < 2)
 		throw Span::BadSizeException();
-	return (0);
+	int		diff = INT_MAX;
+	std::sort(this->_nums.begin(), this->_nums.end());
+	std::vector<int>::iterator i = this->_nums.begin();
+	std::vector<int>::iterator j = this->_nums.begin();
+	++j;
+	for (; j < this->_nums.end() && diff > 0; i++, j++)
+		diff = std::min(diff, *j - *i);
+	return (diff);
 }
 
 int			Span::longestSpan( void ) throw(Span::BadSizeException)
 {
 	if (this->_nums.size() < 2)
 		throw Span::BadSizeException();
-	return (0);
+	return (*std::max_element(std::begin(this->_nums), std::end(this->_nums)) - *std::min_element(std::begin(this->_nums), std::end(this->_nums)));
 }
 
 Span::BadSizeException::BadSizeException( void ) { }
