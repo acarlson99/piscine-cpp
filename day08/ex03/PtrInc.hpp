@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/31 20:20:35 by acarlson          #+#    #+#             //
-//   Updated: 2019/02/01 10:32:52 by acarlson         ###   ########.fr       //
+//   Updated: 2019/02/01 10:48:01 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -27,9 +27,11 @@ public:
 	~PtrInc( void );
 	PtrInc& operator=( PtrInc const &);
 
-	virtual void	execute(int tape[INT_MAX], std::vector<AInstruction *>&, unsigned long *, int *);
+	void	execute(int tape[INT_MAX], std::vector<AInstruction *>&, unsigned long *, int *);
+	char			getCh( void ) const;
 
 private:
+	char		c;
 
 };
 
