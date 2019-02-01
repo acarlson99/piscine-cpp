@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/31 20:20:46 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/31 22:00:36 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/31 23:26:16 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -16,3 +16,8 @@ ValDec::ValDec( void ) { }
 ValDec::ValDec( ValDec const & cp) { *this = cp; }
 ValDec::~ValDec( void ) { }
 ValDec& ValDec::operator=( ValDec const &) { return *this; }
+
+void	ValDec::execute(int[INT_MAX], std::vector<AInstruction>&, unsigned long *, int *)
+{
+	std::cout << c;
+}

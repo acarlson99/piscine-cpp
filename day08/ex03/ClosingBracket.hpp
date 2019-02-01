@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/31 20:20:40 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/31 21:55:49 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/31 23:17:49 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -26,7 +26,7 @@ public:
 	~ClosingBracket( void );
 	ClosingBracket& operator=( ClosingBracket const &);
 
-	virtual void	execute(int tape[INT_MAX], std::vector<AInstruction>, int *, int *);
+	virtual void	execute(int tape[INT_MAX], std::vector<AInstruction>&, unsigned long *, int *);
 
 private:
 

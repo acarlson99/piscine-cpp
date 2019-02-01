@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/31 20:20:36 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/31 22:04:37 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/31 23:18:33 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -27,7 +27,7 @@ public:
 	~Out( void );
 	Out& operator=( Out const &);
 
-	virtual void	execute(int tape[INT_MAX], std::vector<AInstruction>, int *, int *);
+	virtual void	execute(int tape[INT_MAX], std::vector<AInstruction>&, unsigned long *, int *);
 
 private:
 

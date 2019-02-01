@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/31 20:20:34 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/31 22:07:58 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/31 23:20:56 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -27,7 +27,7 @@ public:
 	~TakeInput( void );
 	TakeInput& operator=( TakeInput const &);
 
-	virtual void	execute(int tape[INT_MAX], std::vector<AInstruction>, int *, int *);
+	void	execute(int tape[INT_MAX], std::vector<AInstruction>&, unsigned long *, int *);
 
 private:
 

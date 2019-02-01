@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/31 16:17:28 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/31 22:12:29 by acarlson         ###   ########.fr       //
+//   Updated: 2019/02/01 00:17:06 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -21,16 +21,12 @@
 class AInstruction {
 
 public:
-	AInstruction( std::string );
-	AInstruction( void );
-	AInstruction( AInstruction const & cp);
-	virtual ~AInstruction( void );
-	AInstruction& operator=( AInstruction const &);
+	virtual ~AInstruction( void ) = 0;
+	// AInstruction& operator=( AInstruction const &);
 
-	virtual void	execute(int tape[INT_MAX], std::vector<AInstruction>, int *, int *);
+	virtual void	execute(int tape[INT_MAX], std::vector<AInstruction>&, unsigned long *, int *) = 0;
 
-protected:
-	char		c;
+	virtual char			getCh( void ) const = 0;
 
 };
 

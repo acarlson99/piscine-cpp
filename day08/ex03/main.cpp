@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/31 16:07:31 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/31 22:01:12 by acarlson         ###   ########.fr       //
+//   Updated: 2019/02/01 00:03:28 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -53,8 +53,7 @@ int		main(int argc, char **argv)
 	static int					tape[4096] = { 0 };
 	static_cast<void>(tape);
 	std::vector<AInstruction>	instructions;
-	int							i;
-	static_cast<void>(i);
+	unsigned long				i = 0;
 	std::fstream				fin(argv[1]);
 	char						c;
 	std::string					valid = ".,[]+-<>";
@@ -63,5 +62,10 @@ int		main(int argc, char **argv)
 		if (valid.find_first_of(c) != std::string::npos)
 			addInstruction(instructions, c);
 	fin.close();
+	while (i < instructions.size())
+	{
+		instructions[i].execute(tape, instructions, &i, NULL);
+		++i;
+	}
 	return (0);
 }

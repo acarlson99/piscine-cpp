@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/31 16:24:03 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/31 20:37:30 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/31 23:16:44 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -26,7 +26,7 @@ public:
 	virtual ~OpeningBracket( void );
 	OpeningBracket& operator=( OpeningBracket const &);
 
-	virtual void	execute(int tape[INT_MAX], std::vector<AInstruction>, int *, int *);
+	virtual void	execute(int tape[INT_MAX], std::vector<AInstruction>&, unsigned long *, int *);
 
 private:
 

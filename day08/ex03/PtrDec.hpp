@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/01/31 20:20:35 by acarlson          #+#    #+#             //
-//   Updated: 2019/01/31 22:08:59 by acarlson         ###   ########.fr       //
+//   Updated: 2019/01/31 23:19:36 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -27,7 +27,7 @@ public:
 	~PtrDec( void );
 	PtrDec& operator=( PtrDec const &);
 
-	virtual void	execute(int tape[INT_MAX], std::vector<AInstruction>, int *, int *);
+	virtual void	execute(int tape[INT_MAX], std::vector<AInstruction>&, unsigned long *, int *);
 
 private:
 
