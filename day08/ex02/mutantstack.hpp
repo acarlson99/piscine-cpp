@@ -6,7 +6,7 @@
 //   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2019/02/01 15:28:49 by acarlson          #+#    #+#             //
-//   Updated: 2019/02/01 16:56:10 by acarlson         ###   ########.fr       //
+//   Updated: 2019/02/01 17:44:23 by acarlson         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -19,36 +19,58 @@
 # include <list>
 
 template<typename T>
-class MutantStack<T>: public std::stack<T> {
+class MutantStack: public std::stack<T> {
 
 public:
-	MutantStack( void );
-	MutantStack( MutantStack const & cp);
-	~MutantStack( void );
-	MutantStack& operator=( MutantStack const &);
+	MutantStack( void ) : _size(0) { };
+	MutantStack( MutantStack const & cp) { *this = cp; };
+	~MutantStack( void ) { };
+	MutantStack& operator=( MutantStack const &cp) { this->_stack = cp._stack; this->_size = cp._size; };
 
-	void				push(T n)
+	typedef typename std::list<T>::iterator iterator;
+
+	void			push(T n)
 		{
-			this->_stack.push_back(n);
+			++_size;
+			this->_stack.push_front(n);
 		}
 
-	void				pop( void )
+	void			pop( void )
 		{
+			if (!_size)
+				return ;
+			--_size;
 			return (this->_stack.pop_front());
 		}
 
-	// std::iterator<T>		begin( void )
-	// 	{
-	// 		return (_stack.begin());
-	// 	}
+	T				top( void )
+		{
+			return (this->_stack.front());
+		}
 
-	// std::iterator<T>		end( void )
-	// 	{
-	// 		return (_stack.end());
-	// 	}
+	T				bottom( void )
+		{
+			return (this->_stack.back());
+		}
+
+	iterator		begin( void )
+		{
+			return (_stack.begin());
+		}
+
+	iterator		end( void )
+		{
+			return (_stack.end());
+		}
+
+	unsigned long	size( void )
+		{
+			return (this->_size);
+		}
 
 private:
 	std::list<T>	_stack;
+	unsigned long	_size;
 
 };
 
