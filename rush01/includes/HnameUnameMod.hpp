@@ -7,7 +7,7 @@
 # include <fstream>
 # include "IMonitorModule.hpp"
 
-class HnameUnameMod : public IMonitorModule {
+class HnameUnameMod : public IMonitorModule, public IMonitorDisplay {
 
 public:
 	HnameUnameMod( void );
@@ -17,6 +17,8 @@ public:
 
 	virtual void		printInfo( void );
 	virtual void		updateInfo( void );
+
+	virtual std::string	toString( void );
 
 private:
 	std::string		_uname;

@@ -28,6 +28,14 @@ void		DateTimeMod::printInfo( void )
 	std::cout << _niceStr;
 }
 
+std::string	DateTimeMod::toString( void )
+{
+	std::stringstream	o;
+
+	o << "Date time" << std::endl << _niceStr;
+	return (o.str());
+}
+
 void		DateTimeMod::updateInfo( void ) { 
 	if (this->_time)
 	{

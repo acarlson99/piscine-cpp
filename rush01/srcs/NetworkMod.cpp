@@ -7,11 +7,28 @@ NetworkMod::NetworkMod( void )
 
 NetworkMod::NetworkMod( NetworkMod const & cp) { *this = cp; }
 NetworkMod::~NetworkMod( void ) { }
-NetworkMod& NetworkMod::operator=( NetworkMod const &) { return *this; }	// TODO: implement
+
+NetworkMod& NetworkMod::operator=( NetworkMod const &cp)
+{
+	if (this != &cp)
+	{
+		this->_in = cp._in;
+		this->_out = cp._out;
+	}
+	return *this;
+}
 
 void		NetworkMod::printInfo( void )
 {
 	std::cout << "packets in: " << _in << std::endl << "packets out: " << _out << std::endl;
+}
+
+std::string		NetworkMod::toString( void )
+{
+	std::stringstream	o;
+
+	o << "Network" << std::endl << "packets in: " << _in << std::endl << "packets out: " << _out << std::endl;
+	return (o.str());
 }
 
 void		NetworkMod::updateInfo( void )

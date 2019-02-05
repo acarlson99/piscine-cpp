@@ -6,7 +6,7 @@ OSInfoMod::OSInfoMod( void )
 	{
 		::logErr("Unable to read uname");
 	}
-	else if (!system("sw_vers -productName > sw_vers.tmp 2>>err.log && sw_vers -productVersion 2>>err.log >> sw_vers.tmp && sw_vers -buildVersion >> sw_vers.tmp 2>>err.log"))	// TODO: make this handle errors better
+	else if (!system("sw_vers -productName > sw_vers.tmp 2>>err.log && sw_vers -productVersion 2>>err.log >> sw_vers.tmp && sw_vers -buildVersion >> sw_vers.tmp 2>>err.log"))
 	{
 		std::ifstream ifs("sw_vers.tmp");
 		if (ifs.is_open())
@@ -40,6 +40,14 @@ OSInfoMod& OSInfoMod::operator=( OSInfoMod const &cp)
 	this->_productVersion = cp._productVersion;
 	this->_buildVersion = cp._buildVersion;
 	return *this;
+}
+
+std::string	OSInfoMod::toString( void )
+{
+	std::stringstream	o;
+
+	o << "OS info" << std::endl << "sysname: " << this->_uts.sysname << std::endl << "nodename: " << this->_uts.nodename << std::endl << "release: " << this->_uts.release << std::endl << "version: " << this->_uts.version << std::endl << "machine: " << this->_uts.machine << std::endl << "ProductName: " << this->_productName << std::endl << "ProductVersion: " << this->_productVersion << std::endl << "BuildVersion: " << this->_buildVersion << std::endl;
+	return (o.str());
 }
 
 void		OSInfoMod::printInfo( void )

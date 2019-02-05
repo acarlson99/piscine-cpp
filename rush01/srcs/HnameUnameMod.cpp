@@ -35,4 +35,12 @@ void		HnameUnameMod::printInfo( void )
 	std::cout << "Hostname: " << _hname << std::endl;
 }
 
+std::string	HnameUnameMod::toString( void )
+{
+	std::stringstream	o;
+
+	o << "Hostname Username" << std::endl << "Username: " << _uname << std::endl << "Hostname: " << _hname << std::endl;
+	return (o.str());
+}
+
 void		HnameUnameMod::updateInfo( void ) { }

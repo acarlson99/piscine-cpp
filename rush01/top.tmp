@@ -1,0 +1,13 @@
+Processes: 299 total, 2 running, 297 sleeping, 1254 threads 
+2019/02/04 18:54:22
+Load Avg: 3.20, 4.53, 4.94 
+CPU usage: 8.33% user, 18.75% sys, 72.91% idle 
+SharedLibs: 187M resident, 66M data, 21M linkedit.
+MemRegions: 40352 total, 2104M resident, 126M private, 1366M shared.
+PhysMem: 8031M used (2992M wired), 159M unused.
+VM: 1848G vsize, 1097M framework vsize, 13602(0) swapins, 17957(0) swapouts.
+Networks: packets: 38466462/36G in, 42793811/31G out.
+Disks: 894849/49G read, 1594272/83G written.
+hw.physicalcpu: 4
+hw.logicalcpu: 4
+machdep.cpu.brand_string: Intel(R) Core(TM) i5-6500 CPU @ 3.20GHz

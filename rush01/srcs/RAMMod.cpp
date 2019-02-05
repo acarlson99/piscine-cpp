@@ -20,6 +20,13 @@ void		RAMMod::printInfo( void )
 	std::cout << "used: " << _used << "M" << std::endl << "wired: " << _wired << "M" << std::endl << "unused: " << _unused << "M" << std::endl;
 }
 
+std::string	RAMMod::toString( void )
+{
+	std::stringstream	o;
+	o << "RAM" << std::endl << "used: " << _used << "M" << std::endl << "wired: " << _wired << "M" << std::endl << "unused: " << _unused << "M" << std::endl;
+	return (o.str());
+}
+
 void		RAMMod::updateInfo( void )
 {
 	if (!system("/usr/bin/top -n0 | head -n10 > top.tmp && sysctl hw.physicalcpu hw.logicalcpu machdep.cpu.brand_string >> top.tmp"))

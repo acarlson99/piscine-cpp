@@ -10,22 +10,24 @@
 #include "NetworkMod.hpp"
 #include "RAMMod.hpp"
 #include <unistd.h>
+#include <vector>
+#include <algorithm>
+#include "Window.hpp"
 
-#define DELAY 1000000
+#define DELAY 2500000
 
-static const char	*g_string[] =
-{
-	"hostname",
-	"username",
-	"osinfo",
-	"datetime",
-	"cpu",
-	"ram",
-	"network",
-	"pony",
-	"gui",
-	nullptr
-};
+	static const char *g_string[] =
+		{
+			"hostname",
+			"username",
+			"osinfo",
+			"datetime",
+			"cpu",
+			"ram",
+			"network",
+			"pony",
+			"gui",
+			nullptr};
 
 static const int			tab[] =
 {
@@ -64,7 +66,7 @@ int			parse_args(int argc, char **argv)
 	return (modules);
 }
 
-void		logErr( const char *s )	// TODO: why tf does this not work
+void		logErr( const char *s )
 {
 	std::fstream		ofs;
 	ofs.open("err.log");
@@ -79,83 +81,79 @@ void		logErr( const char *s )	// TODO: why tf does this not work
 
 int main(int argc, char **argv)
 {
+	if (argc < 2)
+	{
+		std::cerr << "Give arguments" << std::endl; std::exit(1);
+	}
+	else if (argc > 2)
+	{
+		std::cerr << "Too many arguments!" << std::endl; std::exit(1);
+	}
 	int modules = parse_args(argc, argv);
-	std::cout << modules << std::endl;
-	static_cast<void>(modules);
 
 	system("rm -f err.log");
-	OSInfoMod		os;
-	std::cout << "[1]  " << std::endl;
-	os.printInfo();
-	os.updateInfo();
-	std::cout << "[2]  " << std::endl;
-	os.printInfo();
 
-	std::cout << std::endl;
+	std::vector<Window *>		wins;
 
-	HnameUnameMod	a;
+	initscr();
+	cbreak();
+	curs_set(0);
+	noecho();
+	wtimeout(stdscr, 0);
 
-	std::cout << "[3]  " << std::endl;
-	a.printInfo();
-	a.updateInfo();
-	std::cout << "[4]  " << std::endl;
-	a.printInfo();
+	int ht, wd;
 
-	std::cout << std::endl;
+	getmaxyx(stdscr, ht, wd);
 
-	DateTimeMod d;
-	std::cout << "[5]  " << std::endl;
-	d.printInfo();
-	d.updateInfo();
-	std::cout << "[6]  " << std::endl;
-	d.printInfo();
+	IMonitorModule	*tmp;
+	int				lines;
+	int				totalLines = 0;
+	std::string		s;
 
-	std::cout << std::endl;
+	while (modules)
+	{
+		int n = 1;
+		while (!(n & modules))
+			n <<= 1;
 
-	CPUMod		cpu;
-	std::cout << "[7]  " << std::endl;
-	cpu.printInfo();
-	cpu.updateInfo();
-	std::cout << "[8]  " << std::endl;
-	cpu.printInfo();
+		if (n == DATETIME)
+			tmp = new DateTimeMod();
+		else if (n == OSINFO)
+			tmp = new OSInfoMod();
+		else if (n == CPU)
+			tmp = new CPUMod();
+		else if (n == RAM)
+			tmp = new RAMMod();
+		else if (n == NETWORK)
+			tmp = new NetworkMod();
+		else if (n == HUNAME)
+			tmp = new HnameUnameMod();
+		s = tmp->toString();
+		lines = std::count(s.begin(), s.end(), '\n');
 
-	std::cout << std::endl;
-
-	RAMMod		ram;
-	std::cout << "[9]  " << std::endl;
-	ram.printInfo();
-	ram.updateInfo();
-	std::cout << "[10] " << std::endl;
-	ram.printInfo();
-
-	std::cout << std::endl;
-
-	NetworkMod	net;
-	std::cout << "[11] " << std::endl;
-	net.printInfo();
-	net.updateInfo();
-	std::cout << "[12] " << std::endl;
-	net.printInfo();
-
-	std::cout << std::endl;
+		wins.push_back(new Window(lines, wd - 1, totalLines, 0));
+		wins.back()->setMod(tmp);
+		totalLines += lines;
+		modules &= ~n;
+	}
 
 	clock_t _ct = clock();
-	while (1) {
+	while (1)
+	{
 		_ct = clock();
-		std::cout << "Time" << std::endl;
-		d.updateInfo();
-		d.printInfo();
-		std::cout << "CPU" << std::endl;
-		cpu.updateInfo();
-		cpu.printInfo();
-		std::cout << "RAM" << std::endl;
-		ram.updateInfo();
-		ram.printInfo();
-		std::cout << "Net" << std::endl;
-		net.updateInfo();
-		net.printInfo();
-		std::cout << std::endl;
+		for (unsigned long i = 0; i < wins.size(); i++)
+		{
+			wins[i]->updateMod();
+			wins[i]->printMod();
+		}
+		for (unsigned long i = 0; i < wins.size(); i++)
+			wrefresh(wins[i]->get_win());
 		_ct = clock() - _ct;
+		if (getch() == 'q')
+		{
+			endwin();
+			std::exit(0);
+		}
 		usleep(DELAY - _ct);
 	}
 }

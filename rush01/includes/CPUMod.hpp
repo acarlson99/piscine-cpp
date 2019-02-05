@@ -5,7 +5,7 @@
 # include <fstream>
 # include "IMonitorModule.hpp"
 
-class CPUMod : public IMonitorModule {
+class CPUMod : public IMonitorModule, public IMonitorDisplay {
 
 public:
 	CPUMod( void );
@@ -15,6 +15,8 @@ public:
 
 	virtual void		printInfo( void );
 	virtual void		updateInfo( void );
+
+	virtual std::string	toString( void );
 
 private:
 	double			_user;

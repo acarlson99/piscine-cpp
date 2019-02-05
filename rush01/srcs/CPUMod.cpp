@@ -23,6 +23,14 @@ void		CPUMod::printInfo( void )
 	std::cout << "user " << _user << std::endl << "sys " << _sys << std::endl << "idle " << _idle << std::endl << "num cores " << _numCores << std::endl << "logical cores " << _logicalCores << std::endl << "clock speed " << _clockSpeed << std::endl;
 }
 
+std::string		CPUMod::toString( void )
+{
+	std::stringstream	o;
+
+	o << "CPU" << std::endl << "user " << _user << std::endl << "sys " << _sys << std::endl << "idle " << _idle << std::endl << "num cores " << _numCores << std::endl << "logical cores " << _logicalCores << std::endl << "clock speed " << _clockSpeed << std::endl;
+	return (o.str());
+}
+
 void		CPUMod::updateInfo( void )
 {
 	if (!system("/usr/bin/top -n0 | head -n10 > top.tmp && sysctl hw.physicalcpu hw.logicalcpu machdep.cpu.brand_string >> top.tmp"))

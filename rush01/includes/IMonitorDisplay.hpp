@@ -4,6 +4,7 @@
 # include <iostream>
 # include <string>
 # include <stdexcept>
+# include <strstream>
 
 #define HUNAME 1
 #define OSINFO 2
@@ -18,6 +19,8 @@ class IMonitorDisplay {
 
 public:
 	virtual ~IMonitorDisplay( void ) {};
+
+
 };
 
 #endif

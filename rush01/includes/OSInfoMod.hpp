@@ -8,7 +8,7 @@
 # include <sys/utsname.h>
 # include "IMonitorModule.hpp"
 
-class OSInfoMod : public IMonitorModule {
+class OSInfoMod : public IMonitorModule, public IMonitorDisplay {
 
 public:
 	OSInfoMod( void );
@@ -18,6 +18,8 @@ public:
 
 	virtual void		printInfo( void );
 	virtual void		updateInfo( void );
+
+	virtual std::string	toString( void );
 
 private:
 	struct utsname		_uts;	// All elements of this are char ptrs

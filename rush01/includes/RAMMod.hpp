@@ -5,7 +5,7 @@
 # include <fstream>
 # include "IMonitorModule.hpp"
 
-class RAMMod : public IMonitorModule {
+class RAMMod : public IMonitorModule, public IMonitorDisplay {
 
 public:
 	RAMMod( void );
@@ -15,6 +15,8 @@ public:
 
 	virtual void		printInfo( void );
 	virtual void		updateInfo( void );
+
+	virtual std::string	toString( void );
 
 private:
 

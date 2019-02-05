@@ -5,7 +5,7 @@
 # include <fstream>
 # include "IMonitorModule.hpp"
 
-class NetworkMod : public IMonitorModule {
+class NetworkMod : public IMonitorModule, public IMonitorDisplay {
 
 public:
 	NetworkMod( void );
@@ -15,6 +15,8 @@ public:
 
 	virtual void		printInfo( void );
 	virtual void		updateInfo( void );
+
+	virtual std::string	toString( void );
 
 private:
 	unsigned long		_in;
